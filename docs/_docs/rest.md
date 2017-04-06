@@ -57,4 +57,10 @@ Start the __Consumer Connector__. It receives sensor values over the secured and
 $ docker-compose -f docker-compose-consumer.yaml up
 ```
 
-Open the web page at `http://example001_consumer-app_1:8081`. You should see temperature values which have been received over the IDS protocol.
+Find out the IP address of the IDS application running in __Consumer Connector__:
+```bash
+$ docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' example001_consumer-app_1
+172.21.0.3
+```
+
+Open the application's web page at `http://172.21.0.3:8081`. You should see temperature values which have been received over the IDS protocol.
