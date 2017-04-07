@@ -1,4 +1,4 @@
-# Trusted IoT Connector Documentation
+# Trusted Connector Documentation
 
 This is a pure documentation project. It is available as a Github [page](https://fraunhofer-aisec.github.io/trusted-iot-connector-documentation/).
 
