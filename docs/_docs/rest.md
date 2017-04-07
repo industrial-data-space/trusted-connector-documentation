@@ -22,7 +22,7 @@ Communication in this scenario runs over the secure IDS protocol. The IDS protoc
 
 ##### Data Conversion
 
-An (example) sensor provides measurement data via MQTT messages. A data app running in the __Provider Connector__ subscribes to MQTT messages and provides them via a REST interface. The connector retrieves it from the REST interface and sends it over the secure IDS protocol (IDSP) to the __Consumer Connector__. There, it is displayed in a web page. 
+An (example) sensor provides measurement data via MQTT messages. A data app running in the __Provider Connector__ subscribes to MQTT messages and provides them via a REST interface. The connector retrieves it from the REST interface and sends it over the secure IDS protocol (IDSP) to the __Consumer Connector__. There, it is displayed in a web page.
 
 So, the conversion is: _MQTT -->  REST (text/plain) --> IDSP (binary blob) --> REST (text/plain) --> HTML_
 
@@ -60,7 +60,7 @@ $ docker-compose -f docker-compose-consumer.yaml up
 Find out the IP address of the IDS application running in __Consumer Connector__:
 ```bash
 $ docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' example001_consumer-app_1
-172.21.0.3
 ```
+Under 'IPAddress', you can see the IP Address of the connector, e.g. `127.21.0.3`.
 
 Open the application's web page at `http://172.21.0.3:8081`. You should see temperature values which have been received over the IDS protocol.

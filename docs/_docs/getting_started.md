@@ -26,7 +26,7 @@ The docker-based Connector requires any Linux operating system which supports do
   - CRUX
   - Raspbian
 
-MacOS is untested, but there are chances it will work.
+MacOS works too, if docker and docker-compose are installed. There is a comfortable installer, doing all the work for MacOS on the Docker home page.
 
 > Note that Windows will not work (although it supports docker through virtualization) because we require UNIX domain socket communication.
 
@@ -114,6 +114,10 @@ services:
 
 ```
 
+Login to the docker registry, if not already done:
+```bash
+  docker login app-store.isst.fraunhofer.de:5000 -u username -p password
+```
 Start the connector:
 
 ```bash
