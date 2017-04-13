@@ -60,7 +60,7 @@ $ docker-compose -f docker-compose-consumer.yaml up
 Find out the IP address of the IDS application running in __Consumer Connector__:
 ```bash
 {% raw %}
-$ docker inspect -f '\{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' example001_consumer-app_1
+$ docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' example001_consumer-app_1
 {% endraw %}
 ```
 Under 'IPAddress', you can see the IP Address of the connector, e.g. `127.21.0.3`.
