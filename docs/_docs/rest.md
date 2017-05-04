@@ -15,6 +15,8 @@ The scenario includes two data apps: a __Provider App__ which retrieves sensor d
 * no matter whether it has been written to run in an IDS connector or on any other platform. Apps do not have to be IDS-aware - in this scenario they use simple REST interfaces.
 
 
+![Scenario: Connecting two REST services to transfer MQTT data]({{ site.url }}/assets/img/example-0001.png)
+
 ##### Remote Attestation with the IDS Protocol
 
 Communication in this scenario runs over the secure IDS protocol. The IDS protocol is a subprotocol of WSS (Web Socket Security) and includes a remote attestation and meta data exchange when establishing a session between two endpoints. The remote attestation confirms that both endpoints are in a trusted state, i.e. that they run known and approved components.
