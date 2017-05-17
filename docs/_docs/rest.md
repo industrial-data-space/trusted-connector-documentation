@@ -15,7 +15,7 @@ The scenario includes two data apps: a __Provider App__ which retrieves sensor d
 * no matter whether it has been written to run in an IDS connector or on any other platform. Apps do not have to be IDS-aware - in this scenario they use simple REST interfaces.
 
 
-![Scenario: Connecting two REST services to transfer MQTT data]({{ site.url }}/assets/img/example-0001.png)
+![Scenario: Connecting two REST services to transfer MQTT data](../..//assets/img/example-0001.png)
 
 ##### Remote Attestation with the IDS Protocol
 
