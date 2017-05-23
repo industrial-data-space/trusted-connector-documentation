@@ -1,13 +1,27 @@
 ---
 layout: doc
-title: Build Operating System
+title: Build trustme OS
 permalink: /docs/dev_setup/
 
 ---
 
-Parts of the Trusted Connector have been released as open source.
+The Trusted Connector supports two container management solutions:
 
-* The underlying operating system _trustm3_, featuring verification and strong container-based isolation of apps, trusted boot, and the foundations of remote attestation is available under a GPL v2 license.
-* The Core Platform components will be made available under a non-copyleft license.
+* Docker, the well-established cloud-ready container management system
+* trustme OS, a highly secure container solution for embedded and mobile systems.
 
-To build trustm3 from source, follow the guidelines at [https://github.com/trustm3/trustme_build](https://github.com/trustm3/trustme_build).
+trustme features verification and strong container-based isolation of apps, trusted boot, and supports remote attestation of Trusted Connectors. Its source code is available under a [GPLv2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html) license.
+
+<div style="text-align:center">
+	<img src="../../assets/img/trustme.png"/>
+</div>
+
+
+trustme currently comes with support for ARM and x86 platforms and can be built in different flavors:
+
+* Android Lollipop 5.1.1_r38 for the Google Nexus 5 (hammerhead) device (ARM)
+* Android Nougat 7.0.0_r6 for the Google Nexus 5 (hammerhead) device (ARM)
+* __IDS Trusted Connector (x86)__
+
+
+To build trustme for the __Trusted Connector on x86 platforms__ from source, follow the guidelines at [https://github.com/trustm3/](https://github.com/trustm3/trustme_build/blob/trustme-5.1.1_r38-github/doc/ids-README.md).
