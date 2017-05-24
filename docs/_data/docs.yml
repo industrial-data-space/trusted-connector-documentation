@@ -1,3 +1,7 @@
+- title: Introduction
+  docs:
+  - overview
+  - system_requirements
 - title: User documentation
   docs:
   - getting_started

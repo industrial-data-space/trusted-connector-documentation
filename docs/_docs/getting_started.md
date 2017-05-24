@@ -81,58 +81,30 @@ $ docker-compose --version
 
 ## Run a Local Connector Instance
 
-Paste the following content into a file `docker-compose.yaml`. Please note that the docker registry used by that file requires you to log in before using `docker login ...` with your username and password.
+1. Download the [docker-compose.yaml](../example-000/docker-compose.yaml) file and save it in a new folder.
 
-``` yaml
-version: '2'
-services:
-
-  # Image for TPM simulator
-  ids-tpm2dsim:
-    image: app-store.isst.fraunhofer.de:5000/ids/tpm2dsim
-    volumes:
-      - ./camel-ids/socket/:/data/cml/tpm2d/communication/
-    command: /tpm2d/cml-tpm2d
-
-  # Image for TPM trusted third party (RAT repository)
-  ids-ttpsim:      
-    image: app-store.isst.fraunhofer.de:5000/ids/ttpsim
-    ports:
-      - "31337:31337"
-
-  # Image for core platform, gets docker control socket mounted into the image
-  ids-core:
-    image: app-store.isst.fraunhofer.de:5000/ids/core-platform
-    volumes:
-      - /tmp/ids/log/:/root/data/log/
-      - /var/run/docker.sock:/var/run/docker.sock
-      - ./camel-ids/socket/:/var/run/tpm2d/
-    ports:
-      - "5005:5005"
-      - "9292:9292"
-      - "8181:8181"
-
-```
-
-Login to the docker registry, if not already done:
+1. Login to the docker registry, if not already done:
 ```bash
   docker login app-store.isst.fraunhofer.de:5000 -u username -p password
 ```
-Start the connector:
+The account is known to all members of the Industrial Data Space Association. If you wish to get an account, please [send us a message](mailto:info@fraunhofer.aisec.de).
 
+1. Start the connector:
 ```bash
 $ docker-compose up
 ```
 
-Congratulations, you just started your first connector! The webconsole of the connector is available at `http://<host>:8181/ids`.
+Congratulations, you just started your first connector! The webconsole of the connector is available at `http://<host>:8181/`.
 
 ## What did just happen?
 
-You installed docker on your machine, downloaded and started a docker-compose definition. This pulled three different docker containers from a remote registry:
+You installed docker on your machine, downloaded and started a docker-compose definition. This pulled three different docker container images from a remote registry:
 
-* IDS Core Container
+* Core Platform Container
 * TPM 2.0 Simulator
 * Remote Attestation Repository
 
-The IDS Core Container is the heart of the trusted Connector. It is responsible for establishing communication to other connectors, routes messages between containers and configures the Connector.
-The TPM 2.0 Simulator is a software trusted platform module which is responsible for attesting the integrity of the stack. In a _real_ setup, the TPM is a hardware module, but for the moment we keep it simple.
+The Core Platform container is the heart of the Trusted Connector. It is responsible for establishing communication to other connectors, routes messages between containers and configures the Trusted Connector.
+The TPM 2.0 simulator is a software trusted platform module which is responsible for attesting the integrity of the stack.
+
+> In a _real_ setup, the TPM is a hardware module, but for the moment we keep it simple.

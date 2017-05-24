@@ -18,7 +18,7 @@ $highlight-color: {{ site.palette.highlight }};
 
 a {color: {{site.palette.colored_text}} };
 
-.post-content > ul {
+.post-content ul {
   padding-left: 30px;
   margin-top: 10px;
   margin-bottom: 15px;
