@@ -18,7 +18,7 @@ __Operating system & container management layer__: The Trusted Connector support
 
 __Core Platform container__: The Core Platform container provides the main functionality of the Trusted Connector and is the sole intermediate between application containers and the Internet. It runs on top of the container management layer and hosts different services for managing applications, setting up data routes and connecting to other Trusted Connectors. Based on Apache Karaf, it provides a management shell and REST API. The main services are
 
-* __Usage Control__: Data flows and the usage of messages can be controlled using the [LUCON](docs/usage_control) policy framework.
+* __Usage Control__: Data flows and the usage of messages can be controlled using the [LUCON](../usage_control) policy framework.
 * __Route Manager__: Message routing based on [Apache Camel](http://camel.apache.org/). The basic installation contains protocol adapters for
     * {:.browser-default} IDSP: An HTTPS-based session protocol between Trusted Connectors, including remote attestation and trust negotiation
     * OPC-UA (based on Eclipse Milo)

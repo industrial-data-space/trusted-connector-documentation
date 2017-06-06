@@ -9,7 +9,7 @@ In this part you will learn how to control data flows within the Connector using
 
 ## Introduction to LUCON
 
-LUCON (_Logic based Usage CONtrol_) is a policy language for controlling data flows between endpoints. The Connector uses [Apache Camel](http://camel.apache.org/) to route messages between services (such as MQTT, REST, or OPC-UA endpoints). Message flows are controlled by LUCON policies, a simple policy language for data labelling and taint tracking.
+LUCON (_Logic based Usage CONtrol_) is a policy language for controlling data flows between endpoints. The Connector uses [Apache Camel](http://camel.apache.org/) to route messages between services (such as MQTT, REST, or OPC-UA endpoints). Message flows are controlled by LUCON policies, a simple policy language for data labeling and taint tracking.
 
 LUCON is a simple policy language and comes with an Eclipse plugin for syntax highlighting, code completion and compilation into a format that is understood by the policy decision point within the Connector. Thus the typical workflow is as follows:
 
@@ -26,7 +26,7 @@ Consider the following example rules.
 ```
 flow_rule {
   id anonymized                       // Rule id
-  if service publicEndpoint           // Target identifier
+  when service publicEndpoint           // Target identifier
   receives private                    // Received message labels
   then drop                           // Drop message
 }
@@ -39,7 +39,7 @@ In this example, a rule `anonymized` declares that if any service matching the `
 ```
 flow_rule {
   id deleteAfterOneMonth              // Rule id
-  if service hadoopCluster            // Target identifier
+  when service hadoopCluster            // Target identifier
   receives *                          // Received message labels
   require delete_after_days(X), X<30  // Obligation 
     otherwise drop                    // Alternative

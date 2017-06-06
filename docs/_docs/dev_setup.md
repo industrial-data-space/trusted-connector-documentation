@@ -25,3 +25,23 @@ trustme currently comes with support for ARM and x86 platforms and can be built 
 
 
 To build trustme for the __Trusted Connector on x86 platforms__ from source, follow the guidelines at [https://github.com/trustm3/](https://github.com/trustm3/trustme_build/blob/trustme-5.1.1_r38-github/doc/ids-README.md).
+
+We recommend using the docker-based build environment:
+
+1. Checkout the build project
+    ```
+    git clone git@github.com:trustm3/trustme_build.git
+    ```
+1. Create build environment as a docker container
+   ```
+   cd trustme_build
+   docker build . -t trustme-builder
+   ```
+1. Run the build environment as a docker container. Assuming you checked out the sources of the trustme main project into `~/workspace/trustme`, mount them into the build environment as follow:
+   ```
+   docker run -ti --name trustme-builder --rm -v ~/workspace/trustme:/root/workspace trust-builder /bin/bash
+   ```
+ 1. Within the docker container, start the build as described in the trustme documentation [https://github.com/trustm3/](https://github.com/trustm3/trustme_build/blob/trustme-5.1.1_r38-github/doc/ids-README.md):
+     ```
+     make ids-all
+     ```
