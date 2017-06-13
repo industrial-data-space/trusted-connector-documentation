@@ -23,6 +23,7 @@ trustme currently comes with support for ARM and x86 platforms and can be built 
 * Android Nougat 7.0.0_r6 for the Google Nexus 5 (hammerhead) device (ARM)
 * __IDS Trusted Connector (x86)__
 
+## Trustme platform
 
 To build trustme for the __Trusted Connector on x86 platforms__ from source, follow the guidelines at [https://github.com/trustm3/](https://github.com/trustm3/trustme_build/blob/trustme-5.1.1_r38-github/doc/ids-README.md).
 
@@ -45,3 +46,23 @@ We recommend using the docker-based build environment:
      ```
      make ids-all
      ```
+
+## Docker converter
+
+Trustme and docker use a different image format. The main difference is than docker uses a stack of `OverlayFS` file system layers, supports various configurations and does not necessarily have to be signed. trustme mainly uses signed space-optimized `SquashFS` images and only provides the options required by either Android or the Trusted Connector.
+
+The different image formats are not relevant to the end user. There is an converter tool which automatically converts docker into trustme images. It is thus possible to run any docker image on the trustme platform.
+
+To build the converter tool, do the following within the build environment:
+
+```
+repo sync
+source build/envsetup.sh
+lunch
+```
+
+Select `trustme_x86_cml-userdebug`
+
+```
+m converter_host
+```

@@ -11,3 +11,4 @@
 - title: Developer documentation
   docs:
   - dev_setup
+  - convert_docker
