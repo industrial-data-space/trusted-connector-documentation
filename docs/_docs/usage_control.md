@@ -21,18 +21,18 @@ LUCON is a simple policy language and comes with an Eclipse plugin for syntax hi
 
 Consider the following example rules.
 
-##### Private data must be anonymized before leaving the Connector
+##### Personal data must be anonymized before leaving the Connector
 
 ```
 flow_rule {
   id anonymized                       // Rule id
   when service publicEndpoint           // Target identifier
-  receives private                    // Received message labels
+  receives personal                    // Received message labels
   then drop                           // Drop message
 }
 ```
 
-In this example, a rule `anonymized` declares that if any service matching the `publicEndpoint` description receives a message that contains a label `private`, the message must be dropped and not sent to the service.
+In this example, a rule `anonymized` declares that if any service matching the `publicEndpoint` description receives a message that contains a label `personal`, the message must be dropped and not sent to the service.
 
 ##### Data must be deleted after 30 days
 
@@ -41,7 +41,7 @@ flow_rule {
   id deleteAfterOneMonth              // Rule id
   when service hadoopCluster            // Target identifier
   receives *                          // Received message labels
-  require delete_after_days(X), X<30  // Obligation 
+  require delete_after_days(X), X<30  // Obligation
     otherwise drop                    // Alternative
 }
 ```
@@ -58,21 +58,41 @@ Flow rules refer to _service_ descriptions. A service description declares a set
 * `removes_label` (optional) Comma-separated list of labels which will be removed from outgoing messages of the service
 * `creates_label`(optional) Comma-separated list of label which will be added to outgoing messages of the service
 
-The following example defines a set of database services that are able to run a `delete_after_days` action and add a label `persisted` to messages.
+The first example defines a service that can blind the fields "surname" and "name" and thus removes the label `personal`. Messages that pass this service, will not be dropped by rule `anonymized`.
+
+```groovy
+service {
+  id anonymizerService
+
+  // Defines the Camel endpoints for which this service description applies, using a specific endpoint address.
+  endpoint address "http://localhost/anonymizer"
+
+
+  // Capabilities can be required by a flow_rule. If not required, nothing will happen
+  capabilities
+    anonymization: personal_data[surname,name]
+
+  // Properties describe the service's behavior.
+  removes_label personal
+}
+```
+
+
+The second example, matching rule `deleteAfterOneMonth` defines a set of database services that are able to run a `delete_after_days` action and add a label `persisted` to messages.
 
 ```groovy
 service {
   id hadoopCluster
-  
+
   // Defines the Camel endpoints for which this service description applies, using a regular expression.
   // Everything starting with hdfs:// or sql:// applies.
   endpoint regex("^[hdfs://.+]|[sql://.+]")
 
-  
+
   // Capabilities can be required by a flow_rule. If not required, nothing will happen
   capabilities
     deletion: delete_after_days(X)
-  
+
   // Properties describe the service's behavior. This one blinds fields "surname" and "name"
   creates_label persisted
 }
