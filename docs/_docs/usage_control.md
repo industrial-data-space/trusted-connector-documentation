@@ -26,8 +26,8 @@ Consider the following example rules.
 ```
 flow_rule {
   id anonymized                       // Rule id
-  when service publicEndpoint           // Target identifier
-  receives personal                    // Received message labels
+  when publicEndpoint           	  // Target identifier
+  receives personal                   // Received message labels
   then drop                           // Drop message
 }
 ```
