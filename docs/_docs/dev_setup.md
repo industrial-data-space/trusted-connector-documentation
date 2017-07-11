@@ -40,10 +40,11 @@ We recommend using the docker-based build environment:
    ```
 1. Run the build environment as a docker container. Assuming you checked out the sources of the trustme main project into `~/workspace/trustme`, mount them into the build environment as follow:
    ```
-   docker run -ti --name trustme-builder --rm -v ~/workspace/trustme:/root/workspace trust-builder /bin/bash
+   docker run -ti --name trustme-builder --rm -v ~/workspace/trustme:/root/workspace trustme-builder /bin/bash
    ```
  1. Within the docker container, start the build as described in the trustme documentation [https://github.com/trustm3/](https://github.com/trustm3/trustme_build/blob/trustme-5.1.1_r38-github/doc/ids-README.md):
      ```
+		 cd /root/workspace 
      make ids-all
      ```
 
