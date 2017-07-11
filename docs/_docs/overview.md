@@ -28,6 +28,7 @@ __Core Platform container__: The Core Platform container provides the main funct
     * REST
     * HTTP(S)
     * Websockets
+    
     Apache Camel supports more than 200 [protocol adapters](http://camel.apache.org/components.html) which can be used by the Trusted Connector.
 * __Configuration Manager__: Persistent key/value store for configurations of the Core Platform, based on the OSGi Preferences Service.
 * __IDS Protocol__: The IDS protocol establishes trust and sets up a secure messaging channel between Trusted Connectors. Integrity of platform stacks are measured and remotely attested, trust levels and usage control policies are negotiated between endpoints. The IDS protocol is available as an endpoint in Apache Camel routes.
