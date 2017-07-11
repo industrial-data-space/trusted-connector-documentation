@@ -33,10 +33,10 @@ We recommend using the docker-based build environment:
     ```
     git clone git@github.com:trustm3/trustme_build.git
     ```
-1. Create build environment as a docker container
+1. Create build environment as a docker container, setting your mail address and name to configure the GIT environment:
    ```
    cd trustme_build
-   docker build . -t trustme-builder
+   docker build --build-arg "GIT_EMAIL=your.name@yourdomain.com" --build-arg "GIT_NAME=Your Name" -t trustme-builder .
    ```
 1. Run the build environment as a docker container. Assuming you checked out the sources of the trustme main project into `~/workspace/trustme`, mount them into the build environment as follow:
    ```
@@ -44,7 +44,7 @@ We recommend using the docker-based build environment:
    ```
  1. Within the docker container, start the build as described in the trustme documentation [https://github.com/trustm3/](https://github.com/trustm3/trustme_build/blob/trustme-5.1.1_r38-github/doc/ids-README.md):
      ```
-		 cd /root/workspace 
+		 cd /root/workspace
      make ids-all
      ```
 
