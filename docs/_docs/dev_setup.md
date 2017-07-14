@@ -47,7 +47,11 @@ We recommend using the docker-based build environment:
 		 cd /root/workspace
      make ids-all
      ```
-
+1. When the build is complete, run trustme by using qemu:
+			```
+			qemu-system-x86_64 -kernel out-trustme/kernel/x86/obj/arch/x86/boot/bzImage -initrd out-cml/target/product/trustme_x86_cml/ramdisk.img -append "console=ttyS0 console_loglevel=7 debug selinux=0" -serial stdio -redir tcp:55550::55550 -redir tcp:8080::8080 -drive file=out-trustme/target/x86/userdata.img,format=raw,media=disk -nographic
+			```
+			
 ## Docker converter
 
 Trustme and docker use a different image format. The main difference is than docker uses a stack of `OverlayFS` file system layers, supports various configurations and does not necessarily have to be signed. trustme mainly uses signed space-optimized `SquashFS` images and only provides the options required by either Android or the Trusted Connector.
