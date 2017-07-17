@@ -13,7 +13,7 @@ The Trusted Connector supports two container management solutions:
 trustme features verification and strong container-based isolation of apps, trusted boot, and supports remote attestation of Trusted Connectors. Its source code is available under a [GPLv2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html) license.
 
 <div style="text-align:center">
-	<img src="../assets/img/trustme.png"/>
+	<img src="../../assets/img/trustme.png"/>
 </div>
 
 
