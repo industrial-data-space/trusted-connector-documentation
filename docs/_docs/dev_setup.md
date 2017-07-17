@@ -30,51 +30,58 @@ To build trustme for the __Trusted Connector on x86 platforms__ from source, fol
 We recommend using the docker-based build environment:
 
 1. Checkout the build project
-  ```
-  git clone git@github.com:trustm3/trustme_build.git
-  ```
+
+	 ```
+   git clone git@github.com:trustm3/trustme_build.git
+   ```
 
 1. Create build environment as a docker container, setting your mail address and name to configure the GIT environment:
-  ```
-  cd trustme_build
-  docker build --build-arg "GIT_EMAIL=your.name@yourdomain.com" --build-arg "GIT_NAME=Your Name" -t trustme-builder .
-  ```
+
+	 ```
+   cd trustme_build
+   docker build --build-arg "GIT_EMAIL=your.name@yourdomain.com" --build-arg "GIT_NAME=Your Name" -t trustme-builder .
+   ```
 
 1. Run the build environment as a docker container. Assuming you checked out the sources of the trustme main project into `~/workspace/trustme`, mount them into the build environment as follows:
-  ```
-  docker run -ti --name trustme-builder --rm -v ~/workspace/trustme:/root/workspace trustme-builder /bin/bash
-	```
+
+	 ```
+   docker run -ti --name trustme-builder --rm -v ~/workspace/trustme:/root/workspace trustme-builder /bin/bash
+	 ```
 
 1. Within the docker container, start the build as described in the trustme documentation [https://github.com/trustm3/](https://github.com/trustm3/trustme_build/blob/trustme-5.1.1_r38-github/doc/ids-README.md):
-	```
-	cd /root/workspace
-	make ids-all
-  ```
+
+	 ```
+	 cd /root/workspace
+	 make ids-all
+   ```
 
 1. When the build is complete, run trustme by using qemu:
-  ```
-	qemu-system-x86_64 -kernel out-trustme/kernel/x86/obj/arch/x86/boot/bzImage -initrd out-cml/target/product/trustme_x86_cml/ramdisk.img -append "console=ttyS0 console_loglevel=7 debug selinux=0" -serial stdio -redir tcp:55550::55550 -redir tcp:8080::8080 -drive file=out-trustme/target/x86/userdata.img,format=raw,media=disk -nographic
-  ```
 
-1. Connect via adb. First, export the adb file location to your environment:
-  ```
-  export PATH=$PATH:/root/workspace/out-cml/host/linux-x86/bin
-  ```
+   ```
+	 qemu-system-x86_64 -kernel out-trustme/kernel/x86/obj/arch/x86/boot/bzImage -initrd out-cml/target/product/trustme_x86_cml/ramdisk.img -append "console=ttyS0 console_loglevel=7 debug selinux=0" -serial stdio -redir tcp:55550::55550 -redir tcp:8080::8080 -drive file=out-trustme/target/x86/userdata.img,format=raw,media=disk -nographic
+   ```
+
+1. First, export the adb file location to your environment:
+
+   ```
+   export PATH=$PATH:/root/workspace/out-cml/host/linux-x86/bin
+   ```
 
 1. Second, connect via adb
-	```
-  adb connect 127.0.0.1:55550
-  adb root
-	adb connect 127.0.0.1:55550
-  adb shell
-	```
+
+	 ```
+   adb connect 127.0.0.1:55550
+   adb root
+	 adb connect 127.0.0.1:55550
+   adb shell
+	 ```
 
 3. Exit the shell and deploy ids containers
-  ```
-  make deploy_ids
-	adb shell reboot -f
-  ```
 
+	 ```
+   make deploy_ids
+	 adb shell reboot -f
+   ```
 
 ## Docker converter
 
