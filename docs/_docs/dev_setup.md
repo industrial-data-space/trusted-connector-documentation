@@ -47,6 +47,7 @@ We recommend using the docker-based build environment:
 	 cd /root/workspace
 	 make ids-all
    ```
+
 1. When the build is complete, run trustme by using qemu:
    ```
 	 qemu-system-x86_64 -kernel out-trustme/kernel/x86/obj/arch/x86/boot/bzImage -initrd out-cml/target/product/trustme_x86_cml/ramdisk.img -append "console=ttyS0 console_loglevel=7 debug selinux=0" -serial stdio -redir tcp:55550::55550 -redir tcp:8080::8080 -drive file=out-trustme/target/x86/userdata.img,format=raw,media=disk -nographic
@@ -56,18 +57,20 @@ We recommend using the docker-based build environment:
    ```
    export PATH=$PATH:/root/workspace/out-cml/host/linux-x86/bin
    ```
-2. Second, connect via adb
+
+1. Second, connect via adb
    ```
    adb connect 127.0.0.1:55550
    adb root
 	 adb connect 127.0.0.1:55550
    adb shell
 	 ```
+
 3. Exit the shell and deploy ids containers
-			```
-			make deploy_ids
-			adb shell reboot -f
-			```
+   ```
+   make deploy_ids
+	 adb shell reboot -f
+   ```
 
 
 ## Docker converter
