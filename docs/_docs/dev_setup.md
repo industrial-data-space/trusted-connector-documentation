@@ -51,6 +51,7 @@ We recommend using the docker-based build environment:
 	make ids-all
   ```
 
+
 1. When the build is complete, run trustme by using qemu:
   ```
 	qemu-system-x86_64 -kernel out-trustme/kernel/x86/obj/arch/x86/boot/bzImage -initrd out-cml/target/product/trustme_x86_cml/ramdisk.img -append "console=ttyS0 console_loglevel=7 debug selinux=0" -serial stdio -redir tcp:55550::55550 -redir tcp:8080::8080 -drive file=out-trustme/target/x86/userdata.img,format=raw,media=disk -nographic
