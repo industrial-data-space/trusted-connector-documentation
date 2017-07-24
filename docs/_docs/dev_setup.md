@@ -58,7 +58,7 @@ We recommend using the docker-based build environment:
 1. When the build is complete, run trustme by using qemu:
 
    ```
-	 qemu-system-x86_64 -kernel out-trustme/kernel/x86/obj/arch/x86/boot/bzImage -initrd out-cml/target/product/trustme_x86_cml/ramdisk.img -append "console=ttyS0 console_loglevel=7 debug selinux=0" -serial stdio -redir tcp:55550::55550 -redir tcp:8080::8080 -drive file=out-trustme/target/x86/userdata.img,format=raw,media=disk -nographic
+	 qemu-system-x86_64 -kernel out-trustme/kernel/x86/obj/arch/x86/boot/bzImage -initrd out-cml/target/product/trustme_x86_cml/ramdisk.img -append "console=ttyS0 console_loglevel=7 debug selinux=0" -serial stdio -redir tcp:55550::55550 -redir tcp:8080::8080 -drive file=out-trustme/target/x86/userdata.img,format=raw,media=disk -nographic -m 1024M
    ```
 
 1. First, export the adb file location to your environment:
@@ -76,12 +76,20 @@ We recommend using the docker-based build environment:
    adb shell
 	 ```
 
-3. Exit the shell and deploy ids containers
+1. Exit the shell and deploy ids containers
 
 	 ```
    make deploy_ids
 	 adb shell reboot -f
    ```
+
+1. Find the process id of the running container and connect to it:
+
+   ```
+   ps | grep cml-service-container
+   cml-run PID /bin/bash --login
+   ```
+
 
 ## Docker converter
 
