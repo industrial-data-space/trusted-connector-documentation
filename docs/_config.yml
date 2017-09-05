@@ -13,7 +13,7 @@ owner:
   link: http://www.industrialdataspace.org
   email: info@aisec.fraunhofer.de
 description: Industrial Data Space
-baseurl: "/trusted-iot-connector-documentation" # the subpath of your site, e.g. /blog
+baseurl: "/trusted-connector-documentation" # the subpath of your site, e.g. /blog
 
 # Specific social links, now we support following social account:
 # github, twitter, weibo, google-plus, instagram, facebook, stack-overflow
