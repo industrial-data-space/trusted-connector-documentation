@@ -20,12 +20,12 @@ The scenario includes two data apps: a __Provider App__ which retrieves sensor d
 
 ##### Remote Attestation with the IDS Protocol
 
-Communication in this scenario runs over the secure IDS protocol. The IDS protocol is a subprotocol of WSS (Web Socket Security) and includes a remote attestation and meta data exchange when establishing a session between two endpoints. The remote attestation confirms that both endpoints are in a trusted state, i.e. that they run known and approved components.
+Communication in this scenario runs over the secure IDSC protocol. IDSC is a subprotocol of WSS (Web Socket Security) and includes a remote attestation and meta data exchange when establishing a session between two endpoints. The remote attestation confirms that both endpoints are in a trusted state, i.e. that they run known and approved components.
 
 
 ##### Data Conversion
 
-An (example) sensor provides measurement data via MQTT messages. A data app running in the __Provider Connector__ subscribes to MQTT messages and provides them via a REST interface. The connector retrieves it from the REST interface and sends it over the secure IDS protocol (IDSP) to the __Consumer Connector__. There, it is displayed in a web page.
+An (example) sensor provides measurement data via MQTT messages. A data app running in the __Provider Connector__ subscribes to MQTT messages and provides them via a REST interface. The connector retrieves it from the REST interface and sends it over the secure IDS Communication protocol (IDSC) to the __Consumer Connector__. There, it is displayed in a web page.
 
 So, the conversion is: _MQTT -->  REST (text/plain) --> IDSP (binary blob) --> REST (text/plain) --> HTML_
 
@@ -46,7 +46,7 @@ $ docker-compose -f docker-compose-ttp.yaml up
 
 ## Start Provider
 
-Start the __Provider Connector__. It includes a simple node app which subscribes to temperature values via MQTT and provides them as REST service. A message route will connect to this REST interface, receive the values and push them to the __Consumer Connector__ over the IDS protocol. The _Provider Connector_ also includes a TPM daemon and a TPM 2.0 simulator for remote attestation.
+Start the __Provider Connector__. It includes a simple node app which subscribes to temperature values via MQTT and provides them as REST service. A message route will connect to this REST interface, receive the values and push them to the __Consumer Connector__ over the IDSC protocol. The _Provider Connector_ also includes a TPM daemon and a TPM 2.0 simulator for remote attestation.
 
 ``` bash
 $ docker-compose -f docker-compose-provider.yaml up
@@ -54,10 +54,10 @@ $ docker-compose -f docker-compose-provider.yaml up
 
 ## Start Consumer
 
-Start the __Consumer Connector__. It receives sensor values over the secured and remotely attested IDS protocol and forwards it to a simple node app running in the __Consumer Connector__. The node app receives data via HTTP POST requests and displays it in a web page.
+Start the __Consumer Connector__. It receives sensor values over the secured and remotely attested IDSC protocol and forwards it to a simple node app running in the __Consumer Connector__. The node app receives data via HTTP POST requests and displays it in a web page.
 
 ``` bash
 $ docker-compose -f docker-compose-consumer.yaml up
 ```
 
-The consumer app exposes a web interface. Open the application's web page at `http://localhost:8081`. You should see temperature values which have been received over the IDS protocol.
+The consumer app exposes a web interface. Open the application's web page at `http://localhost:8081`. You should see temperature values which have been received over the IDSC protocol.

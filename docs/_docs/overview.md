@@ -31,7 +31,7 @@ __Core Platform container__: The Core Platform container provides the main funct
     
     Apache Camel supports more than 200 [protocol adapters](http://camel.apache.org/components.html) which can be used by the Trusted Connector.
 * __Configuration Manager__: Persistent key/value store for configurations of the Core Platform, based on the OSGi Preferences Service.
-* __IDS Protocol__: The IDS protocol establishes trust and sets up a secure messaging channel between Trusted Connectors. Integrity of platform stacks are measured and remotely attested, trust levels and usage control policies are negotiated between endpoints. The IDS protocol is available as an endpoint in Apache Camel routes.
+* __IDS Protocol__: The IDSC protocol establishes trust and sets up a secure messaging channel between Trusted Connectors. Integrity of platform stacks are measured and remotely attested, trust levels and usage control policies are negotiated between endpoints. The IDSC protocol is available as an endpoint in Apache Camel routes.
 * __Webconsole__: An administration web interface
 
 __Application containers__: Applications come in the form of Docker containers. No matter whether the Trusted Connector runs on Docker or trustme management layer, any image from a Docker registry can be pulled into the Trusted Connector and launched as an application. Without further configuration, application containers are isolated from each other and restricted in a virtual network with the Core Platform which blocks outbound traffic. That is, even malicious applications cannot interfere with the running system. This is a major advantage over other, purely OSGi-based application frameworks.
