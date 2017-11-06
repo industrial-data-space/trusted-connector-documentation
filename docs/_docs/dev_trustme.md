@@ -1,7 +1,7 @@
 ---
 layout: doc
 title: Build trustme OS
-permalink: /docs/dev_setup/
+permalink: /docs/dev_trustme/
 
 ---
 

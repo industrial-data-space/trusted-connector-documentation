@@ -5,10 +5,12 @@
 - title: User documentation
   docs:
   - getting_started
+  - shell
   - rest
   - usage_control
 
 - title: Developer documentation
   docs:
-  - dev_setup
+  - dev_core
+  - dev_trustme
   - convert_docker

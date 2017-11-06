@@ -11,20 +11,38 @@ The Trusted Connector is designed to have a small minimum footprint, while at th
 
 ##### Supported Architectures
 
-* x86 64 bit is fully supported with trustme and Docker stacks.
-* ARM Cortex is supported with trustme and Docker stacks. TPM integration might need extra cross-compilation
-* PowerPC is experimental
+The Trusted Connector supports x86 (64b), PowerPC, and ARM architectures (including a Raspberry Pi docker image). The application-layer _Core Platform_ runs either standalone or interacts with a Docker or trust\|me container management layer.
+
+It is tested for the following platforms:
 
 
-##### Storage
+<style>
+table {
+    display:table;
+    width:70%;
+}
+table td {
+	padding: 5px;
+}
+</style>
+
+|           |  Platform | Description |
+| --------- |------------------- | ---- |
+| ![image-title-here](../../assets/img/tux_logo.png){: width="50px"} | Linux x86-64 | Tested with docker and trust\|me for x86|
+| ![image-title-here](../../assets/img/android_logo.png){: width="50px"} | Android | Tested with trust\|me for ARM |
+| ![image-title-here](../../assets/img/pi_logo.png){: width="50px"} | Raspberry Pi | Tested with docker image for Raspbian Strech (ARM)|
+|  | 16/8-Core PowerPC | Tested with trust\|me, no Docker support |
+
+
+
+##### Storage Requirements
 
 * Core Platform container: ~100 MB, plus
-    * trustme container management layer: ~50 MB
-    * Docker container management layer: depending on the underlying OS.
-    A minimal Raspbian Jessie Lite for the Raspberry Pi is ~ 300MB, a minimum CoreOS is ~280 MB
+    * ~50 MB for trust\|me container management layer, or
+    * ~300 MB for Raspbian Lite Stretch with docker container management layer
  * At runtime additional ~100 MB should be available
 
-##### Memory
+##### Memory Requirements
 
 * A minimum of 128 MB memory is required
 * A minimum of 512 MB memory is recommended
