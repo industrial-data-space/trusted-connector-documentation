@@ -5,7 +5,6 @@
 - title: User documentation
   docs:
   - getting_started
-  - shell
   - rest
   - usage_control
 

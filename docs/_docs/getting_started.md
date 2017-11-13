@@ -96,6 +96,8 @@ $ docker-compose up
 
 Congratulations, you just started your first connector! The webconsole of the connector is available at `http://<host>:8181/`.
 
+The login is `ids`:`ids`.
+
 ## What did just happen?
 
 You installed docker on your machine, downloaded and started a docker-compose definition. This pulled three different docker container images from a remote registry:

@@ -36,7 +36,10 @@ After a successful build, the Core Platform can be launched with the following c
 karaf-assembly/target/assembly/bin/karaf clean debug
 ```
 
-The following Docker images are created:
+Confirm that the management console is available at `http://ids:ids@localhost:8181/`.
+
+
+The following Docker images are created and can be started with `docker run -ti --rm --name core-platform <image name>`:
 
 ```
 registry.netsec.aisec.fraunhofer.de/ids/core-platform:develop
