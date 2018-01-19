@@ -83,18 +83,12 @@ $ docker-compose --version
 
 1. Download the [docker-compose.yaml](../example-000/docker-compose.yaml) file and save it in a new folder.
 
-1. Login to the docker registry, if not already done:
-```bash
-  docker login app-store.isst.fraunhofer.de:5000 -u username -p password
-```
-The account is known to all members of the Industrial Data Space Association. If you wish to get an account, please [send us a message](mailto:info@fraunhofer.aisec.de).
-
 1. Start the connector:
 ```bash
 $ docker-compose up
 ```
 
-Congratulations, you just started your first connector! The webconsole of the connector is available at `http://<host>:8181/`.
+Congratulations, you just started your first connector! The webconsole of the connector is available at `http://localhost:8181/`.
 
 The login is `ids`:`ids`.
 
