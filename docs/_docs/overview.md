@@ -33,7 +33,7 @@ The Trusted Connector supports two container management layers: [Docker](https:/
 		</td>
 	</tr>
 	<tr>
-		<td>trustme</td>
+		<td><img width="128" src="../../assets/img/trustme-logo.png"/></td>
 		<td>
 			<ul>
 				<li style="list-style-type: disc">For highly secure embedded platforms</li>
