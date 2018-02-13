@@ -9,7 +9,7 @@ In this tutorial you will set up a minimal scenario for retrieving data from a s
 
 ##### Hosting Apps
 
-The scenario includes two data apps: a __Provider App__ which retrieves sensor data from outside of the IDS and provides it as a REST service and a __Consumer App__ which retrieves data via REST and displays it in a webpage. The scenario shows how any application can be hosted by the Trusted Connector, as long as it is wrapped in a Docker or trustX container
+The scenario includes two data apps: a __Provider App__ which retrieves sensor data from outside of the IDS and provides it as a REST service and a __Consumer App__ which retrieves data via REST and displays it in a webpage. The scenario shows how any application can be hosted by the Trusted Connector, as long as it is wrapped in a Docker or trustme container
 
 * no matter which language it is programmed in
 * no matter whether it has been written to run in an IDS connector or on any other platform. Apps do not have to be IDS-aware - in this scenario they use simple REST interfaces.

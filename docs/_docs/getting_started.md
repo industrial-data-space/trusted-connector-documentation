@@ -7,71 +7,25 @@ permalink: /docs/getting_started/
 
 In this part you will learn how to download an instance of the Connector and start it on your computer.
 
-> Note that this tutorial will use the (less secure) docker-based variant of the Connector. The alternative based on trustm3 comprises a whole OS stack, including the kernel.
+> Note that this tutorial will use the (less secure) docker-based variant of the Connector. The alternative based on trustme comprises a whole OS stack, including the kernel.
+
+> Note that Windows is not supported because the Trusted Connector requires UNIX domain sockets for internal communication.
 
 
-## Prerequisites
+### Install Docker
 
-The docker-based Connector requires any Linux operating system which supports docker. This is:
+Follow the [instructions from the Docker website](https://www.docker.com/community-edition#/download) to install Docker Community Edition.
 
-  - CentOS
-  - Debian
-  - Fedora
-  - Oracle Linux
-  - Red Hat Enterprise Linux
-  - openSUSE and SUSE Linux Enterprise
-  - Ubuntu
-  - Gentoo
-  - Arch
-  - CRUX
-  - Raspbian
-
-MacOS works too, if docker and docker-compose are installed. There is a comfortable installer, doing all the work for MacOS on the Docker home page.
-
-> Note that Windows will not work (although it supports docker through virtualization) because we require UNIX domain socket communication.
-
-
-## Install Docker
-
-Install required packages
+Confirm it works
 
 ``` bash
-$ sudo apt-get install apt-transport-https ca-certificates curl
+$ docker --version
 ```
 
-Install PGP key of docker repository
-
-``` bash
-$ curl -fsSL https://yum.dockerproject.org/gpg | sudo apt-key add -
-```
-
-Add docker repository
-
-``` bash
-$ sudo add-apt-repository "deb https://apt.dockerproject.org/repo/ ubuntu-$(lsb_release -cs) main"
-```
-
-Load packages
-
-``` bash
-$ sudo apt-get update
-```
-
-Install docker
-
-``` bash
-$ sudo apt-get -y install docker-engine
-```
 
 ## Install docker-compose
 
-``` bash
-$ curl -L "https://github.com/docker/compose/releases/download/1.10.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-```
-
-``` bash
-$ chmod +x /usr/local/bin/docker-compose
-```
+Install docker-compose by following the [instructions on the website](https://docs.docker.com/compose/install/#prerequisites).
 
 Confirm it works
 
@@ -79,9 +33,9 @@ Confirm it works
 $ docker-compose --version
 ```
 
-## Run a Local Connector Instance
+## Run a Local Connector
 
-1. Download the [docker-compose.yaml](../example-000/docker-compose.yaml) file and save it in a new folder.
+1. Download the [docker-compose.yaml](https://raw.githubusercontent.com/industrial-data-space/trusted-connector/develop/docker-compose.yaml) file and save it in a new folder.
 
 1. Start the connector:
 ```bash

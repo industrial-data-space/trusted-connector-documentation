@@ -11,7 +11,7 @@ The Trusted Connector is designed to have a small minimum footprint, while at th
 
 ##### Supported Architectures
 
-The Trusted Connector supports x86 (64b), PowerPC, and ARM architectures (including a Raspberry Pi docker image). The application-layer _Core Platform_ runs either standalone or interacts with a Docker or trust\|me container management layer.
+The Trusted Connector supports x86 (64b), PowerPC, and ARM architectures (including a Raspberry Pi docker image). The application-layer _Core Platform_ runs either standalone or interacts with a Docker or trustme container management layer.
 
 It is tested for the following platforms:
 
@@ -28,17 +28,17 @@ table td {
 
 |           |  Platform | Description |
 | --------- |------------------- | ---- |
-| ![image-title-here](../../assets/img/tux_logo.png){: width="50px"} | Linux x86-64 | Tested with docker and trust\|me for x86|
-| ![image-title-here](../../assets/img/android_logo.png){: width="50px"} | Android | Tested with trust\|me for ARM |
+| ![image-title-here](../../assets/img/tux_logo.png){: width="50px"} | Linux x86-64 | Tested with docker and trustme for x86|
+| ![image-title-here](../../assets/img/android_logo.png){: width="50px"} | Android | Tested with trustme for ARM |
 | ![image-title-here](../../assets/img/pi_logo.png){: width="50px"} | Raspberry Pi | Tested with docker image for Raspbian Strech (ARM)|
-|  | 16/8-Core PowerPC | Tested with trust\|me, no Docker support |
+|  | 16/8-Core PowerPC | Tested with trustme, no Docker support |
 
 
 
 ##### Storage Requirements
 
 * Core Platform container: ~100 MB, plus
-    * ~50 MB for trust\|me container management layer, or
+    * ~50 MB for trustme container management layer, or
     * ~300 MB for Raspbian Lite Stretch with docker container management layer
  * At runtime additional ~100 MB should be available
 
