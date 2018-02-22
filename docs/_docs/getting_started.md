@@ -34,13 +34,6 @@ $ docker-compose --version
 ```
 
 ## Run a Local Connector
-1. Log into the app store Please use the credentials that have been provided by the IDS Association (Username: ids):
-```bash
-$ docker login app-store.isst.fraunhofer.de:5000
-```
-
-
-
 1. Download the [docker-compose.yaml](https://raw.githubusercontent.com/industrial-data-space/trusted-connector/develop/docker-compose.yaml) file and save it in a new folder.
 
 1. Start the connector:
