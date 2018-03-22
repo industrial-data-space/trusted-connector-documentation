@@ -31,7 +31,7 @@ So, the conversion is: _MQTT -->  REST (text/plain) --> IDSP (binary blob) --> R
 
 ## Unzip Example Setup
 
-As member of the Industrial Data Space association, you have received a Zip file `trusted-connector-examples_0.1` containing all necessary files for this example. Unzip the file in some folder and go to the contained folder `example-001`.
+Download the [trusted-connector-examples_0.9](https://github.com/industrial-data-space/trusted-connector/blob/develop/examples/trusted-connector-examples_0.9.zip?raw=true) file. Unzip the file in some folder and go to the contained folder `example-009`.
 
 This folder contains docker-compose descriptions for three main entities: the _Provider Connector_, the _Consumer Connector_, and the _Trusted Third Party_. In a production setup, these three entities would be remotely connected and operated by different owners. For the sake of this example, we will run them on your local machine.
 
