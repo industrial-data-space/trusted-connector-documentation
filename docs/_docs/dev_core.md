@@ -10,8 +10,8 @@ The Core Platform is the connector's application layer part for managing contain
 ##### Prerequisites
 
 * Java 8 (7 won't work, 9 might need extra tweaking of the build)
-* Maven (>= 3.3.9 recommended)
-* npm (>= 5.5.1 recommended)
+* Maven (>= 3.5.3 recommended)
+* yarn (>= 1.6.0 recommended)
 * docker (>= 17.05.0 recommended)
 
 ##### Checkout
@@ -36,7 +36,7 @@ After a successful build, the Core Platform can be launched with the following c
 karaf-assembly/target/assembly/bin/karaf clean debug
 ```
 
-Confirm that the management console is available at `http://ids:ids@localhost:8181/`.
+Confirm that the management console is available at `http://localhost:8181/`.
 
 
 The following Docker images are created and can be started with `docker run -ti --rm --name core-platform <image name>`:
