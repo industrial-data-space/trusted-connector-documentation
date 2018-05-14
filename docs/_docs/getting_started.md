@@ -34,7 +34,6 @@ $ docker-compose --version
 ```
 
 ## Run a Local Connector
-
 1. Download the [docker-compose.yaml](https://raw.githubusercontent.com/industrial-data-space/trusted-connector/develop/docker-compose.yaml) file and save it in a new folder.
 
 1. Start the connector:
