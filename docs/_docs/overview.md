@@ -82,7 +82,7 @@ tbd
 <a name="trustedplatform"></a>
 ## Trusted Platform
 
-The Trusted Connector supports two container management layers: [Docker](https://www.docker.com/) and [trustme](https://github.com/trustm3/trustme_main). 
+The Trusted Connector supports two container management layers: [Docker](https://www.docker.com/) and [trustme](https://github.com/trustm3/trustme_main).
 
 <table>
     <tr>
@@ -127,7 +127,7 @@ The Core Container provides the main functionality of the Trusted Connector and 
     * REST
     * HTTP(S)
     * Websockets
-    
+
     Apache Camel supports more than 200 [protocol adapters](http://camel.apache.org/components.html) which can be used by the Trusted Connector.
 * __IDS Protocol__: The IDSC protocol establishes trust and sets up a secure messaging channel between Trusted Connectors. Integrity of platform stacks are measured and remotely attested, trust levels and usage control policies are negotiated between endpoints. The IDSC protocol is available as an endpoint in Apache Camel routes.
 * __Management GUI__: An administration web interface
@@ -143,7 +143,23 @@ Applications come in the form of Docker containers. No matter whether Docker or 
 <a name="idm"></a>
 ## Cross-Enterprise Identity Management
 
-tbd
+### Identity tokens
+Every connector needs three identity tokens:
+* A device certificate (X.509v3)
+* A TLS connection certificate (X.509v3)
+* A 'Dynamic Attribute Token'  (OAuth Access Token)
+
+Every connector needs a certificate issued by the Device-CA. This certificate serves as the root of identity. The contents of this certificate are kept at minimum to avoid the need for later revocation in case of changing attributes. This certificate needs to be manually deployed during connector setup.
+
+The TLS connection certificate is used for TLS tunneling. This certificate is automatically requested by the connector by interacting with a ACME server that is integrated into the TLS Sub-CA. So no manual deployment is needed.
+
+The 'Dynamic Attribute Token' is an OAuth Access Token, signed by the Dynamic Attribute Provisioning Service (see below). This is a short-lived token that contains attributes that the connector possesses.
+
+### Identity Management architecture
+<div style="text-align:center">
+    <img src="../../assets/img/idm-architecture.png"/>
+</div>
+
 
 <span style="height:30px;display:block;"></span>
 
