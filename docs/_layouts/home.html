@@ -2,7 +2,7 @@
 layout: default
 
 config:
-  disable_top_bar: true
+  disable_top_bar: false
   styles: ['main']
 ---
 
@@ -23,7 +23,7 @@ config:
 
 
         <div class="row center">
-          <a href="{{ doc_url | prepend: site.baseurl }}" id="download-button" class="btn-large waves-effect waves-light">Get started</a>
+          <a href="{{ doc_url | prepend: site.baseurl }}" id="download-button" class="btn-large waves-effect waves-light">Get Started</a>
         </div>
 
         <!-- Placeholder for margin -->
@@ -52,7 +52,10 @@ config:
       <div class="section">
         <div class="row center">
           <p class="col s12 m8 offset-m2 caption">An edge platform for privacy-preserving data processing and trusted execution.</p>
-          <div class="col s12"><a href="{{ doc_url | prepend: site.baseurl }}" class="btn-large waves-effect waves-light">Get started</a></div>
+        </div>
+        <div class="row center">
+          <div class="col m3 push-m3 s12 center"><a href="{{ doc_url | prepend: site.baseurl }}" class="btn-large waves-effect waves-light">Get Started</a></div>          
+          <div class="col m3 push-m3 s12 center"><a class="btn-large" href="assets/2018-trusted-connector-whitepaper.pdf">Whitepaper (German)</a></div>          
         </div>
       </div>
 

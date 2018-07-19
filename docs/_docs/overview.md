@@ -11,9 +11,13 @@ The IDS Trusted Connector is an IoT and Industrial 4.0 edge gateway platform and
 
 The Trusted Connector allows connecting sensors with cloud services and other Connectors, using various protocol adapters and configurable data routes. Data procession applications can be loaded into the connector using containerization frameworks.
 
+<div class="row center" style="padding: 40px"><a class="btn waves-effect waves-light" href="../../assets/2018-trusted-connector-whitepaper.pdf">Whitepaper (German)</a></div>
+
+
 <div style="text-align:center">
-	<img src="../../assets/img/overview.png"/>
+    <img src="../../assets/img/overview.png"/>
 </div>
+
 
 
 __Operating system & container management layer__
