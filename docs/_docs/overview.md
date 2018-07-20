@@ -110,7 +110,7 @@ The Trusted Connector supports two container management layers: [Docker](https:/
 
 
 <div style="text-align:center">
-    <img src="../../assets/img/overview.png"/>
+    <img width="640" src="../../assets/img/overview.png"/>
 </div>
 
 
@@ -149,19 +149,42 @@ Every connector needs three identity tokens:
 * A TLS connection certificate (X.509v3)
 * A 'Dynamic Attribute Token'  (OAuth Access Token)
 
+<div style="width:50%;text-align:center">
+    <img src="../../assets/img/certificate-architecture.png"/>
+</div>
+
 Every connector needs a certificate issued by the Device-CA. This certificate serves as the root of identity. The contents of this certificate are kept at minimum to avoid the need for later revocation in case of changing attributes. This certificate needs to be manually deployed during connector setup.
 
 The TLS connection certificate is used for TLS tunneling. This certificate is automatically requested by the connector by interacting with a ACME server that is integrated into the TLS Sub-CA. So no manual deployment is needed.
 
-The 'Dynamic Attribute Token' is an OAuth Access Token, signed by the Dynamic Attribute Provisioning Service (see below). This is a short-lived token that contains attributes that the connector possesses.
+The 'Dynamic Attribute Token' is an OAuth Access Token, signed by the Dynamic Attribute Provisioning Service (DAPS). This is a short-lived token that contains attributes that the connector possesses.
 
-### Identity Management architecture
-<div style="text-align:center">
-    <img src="../../assets/img/idm-architecture.png"/>
+### Authorization workflow
+
+When a resource on a connector is accessed, an access token needs to be presented by the requesting connector. This is performed automatically with a run of the IDSCP.
+
+<div style="width:50%;text-align:center">
+    <img src="../../assets/img/idm-workflow.png"/>
 </div>
 
+The general workflow is:
+* A requesting connector presents its Device Certificate to the DAPS to receive a Dynamic Attribute Token (DAT).
+* This DAT can be used to directly access a resource provided by another Connector.
+An alternative configuration option would be to introduce a local or use-case specific Authorization Service that provides a custom access token. This is completely optional and thus marked grey.
+* The respective token is then handed to a Connector with every resource access request.
 
-<span style="height:30px;display:block;"></span>
+### Dynamic Access Token issuance
+<div style="width:50%;text-align:center">
+    <img src="../../assets/img/token_exchange.png"/>
+</div>
+
+* A: call C3/token endpoint with Client Credentials (X.509 Cert)
+* B: Issue JWT-1\{attribute_list, client_id, aud: idsAS:\*\}
+* C (optional): Hand in JWT-1, request JWT-2 \{scope: C1/PS\}
+* D: Use Rule Engine for access decision, issue JWT-2\{aud: C1\}
+* E: Connect via IDSCP (Auth by JWT-2)
+
+An example for the attribute list would be certification status or membership in the IDS.
 
 <a name="lucon"></a>
 ## Data Usage Control
