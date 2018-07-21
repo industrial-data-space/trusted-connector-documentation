@@ -27,13 +27,16 @@ git clone git@github.com:industrial-data-space/trusted-connector.git
 Change into the cloned directory and start the build.
 
 ```
-mvn clean install
+cd ids-webconsole/src/main/resources/www
+yarn install
+cd -
+./gradlew clean install
 ```
 
 After a successful build, the Core Platform can be launched with the following command:
 
 ```
-karaf-assembly/target/assembly/bin/karaf clean debug
+karaf-assembly/build/assembly/bin/karaf clean debug
 ```
 
 Confirm that the management console is available at `http://localhost:8181/`.
