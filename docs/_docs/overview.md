@@ -149,8 +149,8 @@ Every connector needs three identity tokens:
 * A TLS connection certificate (X.509v3)
 * A 'Dynamic Attribute Token'  (OAuth Access Token)
 
-<div style="width:50%;text-align:center">
-    <img src="../../assets/img/certificate-architecture.png"/>
+<div style="text-align:center">
+    <img width="500" src="../../assets/img/certificate-architecture.png"/>
 </div>
 
 Every connector needs a certificate issued by the Device-CA. This certificate serves as the root of identity. The contents of this certificate are kept at minimum to avoid the need for later revocation in case of changing attributes. This certificate needs to be manually deployed during connector setup.
@@ -163,8 +163,8 @@ The 'Dynamic Attribute Token' is an OAuth Access Token, signed by the Dynamic At
 
 When a resource on a connector is accessed, an access token needs to be presented by the requesting connector. This is performed automatically with a run of the IDSCP.
 
-<div style="width:50%;text-align:center">
-    <img src="../../assets/img/idm-workflow.png"/>
+<div style="text-align:center">
+    <img width="500" src="../../assets/img/idm-workflow.png"/>
 </div>
 
 The general workflow is:
@@ -174,8 +174,8 @@ An alternative configuration option would be to introduce a local or use-case sp
 * The respective token is then handed to a Connector with every resource access request.
 
 ### Dynamic Access Token issuance
-<div style="width:50%;text-align:center">
-    <img src="../../assets/img/token_exchange.png"/>
+<div style="text-align:center">
+    <img width="500" src="../../assets/img/token_exchange.png"/>
 </div>
 
 * A: call C3/token endpoint with Client Credentials (X.509 Cert)
