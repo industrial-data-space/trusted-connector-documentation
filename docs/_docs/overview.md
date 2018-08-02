@@ -72,11 +72,16 @@ Use the Trusted Connector to connect sensors with cloud services and other Conne
 <span style="height:30px;display:block;"></span>
 <a name="apps"></a>
 ## App Isolation
+The isolation between Apps is based on the isolation between containers. The Core Container is a privileged container running the Core Container Stack, whick takes care of all management and routing tasks. The architecture provides OS-level virtualization. This means the kernel is shared between all container instances. Kernel security mechanisms are used to provide user space virtualization. Access to hardware interfaces (like network interfaces) can be limited to specific containers. In a default configuration, only the core container is allowed to communicate with the outside. Service containers can only be accessed over data routes configured there.
 
-tbd
+<div style="text-align:center">
+    <img width="500" src="../../assets/img/trustme_arch.png"/>
+</div>
 
-
-
+Isolation works based on kernel features: Each container runs in a separate namespace. Thus, namespaces virtualize the kernel resources. This makes containers unaware of components in a different namespace. Cgroups allow for flexible allocation and enforcement of process group policies. This way, process groups can be formed to create a container. This also allows to define policies regarding CPU and memory limitations as well as other hardware resources, as external interfaces.
+The Linux Security Module (LSM) enforces protection policies by introducing hooks at critical points of execution.
+Capabilities are used to assign processes with a fine-grained set of permissions to regulate access to kernel objects.
+Finally, Full Disk Encryption (FDE) is used to encrypt all persisted container storage. This approach is compatible to Linux Containers (LXC).
 
 <span style="height:30px;display:block;"></span>
 <a name="trustedplatform"></a>
