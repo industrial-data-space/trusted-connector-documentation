@@ -40,17 +40,13 @@ Use the Trusted Connector to connect sensors with cloud services and other Conne
 </div>
 <div class="row">
     <div class="col s12 m6">
-        <div class="card horizontal">
-            <div class="card-image">
-                <img src="https://lorempixel.com/100/190/nature/6">
+        <div class="card hoverable">
+            <div class="card-content">
+                <span class="card-title">Trusted Platform</span>
+                <p>With the trust|me container management and secure boot, the Trusted Connector makes use of a TPM to gurantee the integrity of the software stack from bare metal to applications. A remote attestation protocol makes sure you can rely on your remote party's integrity.</p>
             </div>
-            <div class="card-stacked">
-                <div class="card-content">
-                    <p>With the trust|me container management and secure boot, the Trusted Connector makes use of a TPM to gurantee the integrity of the software stack from bare metal to applications. A remote attestation protocol makes sure you can rely on your remote party's integrity.</p>
-                </div>
-                <div class="card-action text-grey text-darken-4">
-                    <a href="#trustedplatform" class="text-grey text-darken-4">Learn more</a>
-                </div>
+            <div class="card-action text-grey text-darken-4">
+                <a href="#trustedplatform" class="text-grey text-darken-4">Learn more</a>
             </div>
         </div>
     </div>
