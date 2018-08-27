@@ -190,11 +190,18 @@ An example for the attribute list would be certification status or membership in
 <a name="lucon"></a>
 ## Data Usage Control
 
-A central part of the data exchange between connectors is the ability to document and control data usage. In addition to access control, usage control influences how data may be processed throughout its lifetime. We provide usage control by implementing information flow control. This enables the system to verify the deployed data routes. Only if the routes comply to a predefined set of data usage policies, data that is specified in the policy set is allowed to be processed in this data route.
-An example for this would be personal data. This data must be anonymized before leaving a connector, so a policy set may be defined that disallows personal data being processed in a route that transmits data to a remote endpoint.
+A central part of the data exchange between connectors is the ability to document and control data usage. 
+In addition to access control, Usage Control influences how data may be processed throughout its lifetime. 
+To enable Usage Control, we created LUCON, a policy framework for 'Logic Based Usage Control'. 
+This frameworks allows to control data flows between Apps and Connector instances.
+Data is labeled by LUCON as soon as it is processed by the Connector. While the data is processed by a data route, these labels are transported along 
+with the data and, depending on the defined policies, are removed, transformed or extended. 
+Usage of this data can be limited or invalid data flows can be suppressed. It is impossible to associate obligations to data that allow 
+to limit the way data can be accessed or to enforce specific actions to be carried out. 
 
+Data that is marked private can be hindered from leaving a Connector. It is also possible to enforce data undergoing anonymization 
+provided by a dedicated service before being accessed from the outside. An example for an obligation is a logging event were every access to a data item leads to an entry in
+the audit log. The policies are transmitted along with the data with the IDS Communication Protocol (IDSCP). 
 
-TODO: Illustration
-TODO: Exmaple policy
 
 <span style="height:30px;display:block;"></span>
