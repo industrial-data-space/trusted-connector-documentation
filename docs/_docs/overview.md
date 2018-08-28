@@ -193,8 +193,4 @@ An example for the attribute list would be certification status or membership in
 A central part of the data exchange between connectors is the ability to document and control data usage. In addition to access control, usage control influences how data may be processed throughout its lifetime. We provide usage control by implementing information flow control. This enables the system to verify the deployed data routes. Only if the routes comply to a predefined set of data usage policies, data that is specified in the policy set is allowed to be processed in this data route.
 An example for this would be personal data. This data must be anonymized before leaving a connector, so a policy set may be defined that disallows personal data being processed in a route that transmits data to a remote endpoint.
 
-
-TODO: Illustration
-TODO: Exmaple policy
-
 <span style="height:30px;display:block;"></span>
