@@ -19,7 +19,7 @@ The Core Platform is the connector's application layer part for managing contain
 Clone the project from Github.
 
 ```
-git clone git@github.com:industrial-data-space/trusted-connector.git
+git clone https://github.com/industrial-data-space/trusted-connector.git
 ```
 
 ##### Build
