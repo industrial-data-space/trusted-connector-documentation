@@ -11,7 +11,7 @@ In this part you will learn how to download an instance of the Connector and sta
 
 > Note that Windows is not supported because the Trusted Connector requires UNIX domain sockets for internal communication.
 
-
+> Not that in order to run the Trusted Connector in a Virtual Machine, TWO processors need to be assigned. 
 ### Install Docker
 
 Follow the [instructions from the Docker website](https://www.docker.com/community-edition#/download) to install Docker Community Edition.
