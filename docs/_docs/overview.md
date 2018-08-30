@@ -17,7 +17,7 @@ Use the Trusted Connector to connect sensors with cloud services and other Conne
 <div class="row">
     <div class="col s12 m6">
         <div class="card hoverable">
-            <div class="card-content">
+            <div class="card-content" style="height:200px">
                 <span class="card-title">App Isolation</span>
                 <p>Apps running in the Trusted Container are isolated from each other and from the Internet. This way, apps cannot leak data or harm each other or the Connector.</p>
             </div>
@@ -28,7 +28,7 @@ Use the Trusted Connector to connect sensors with cloud services and other Conne
     </div>
     <div class="col s12 m6">
         <div class="card hoverable">
-            <div class="card-content">
+            <div class="card-content" style="height:200px">
                 <span class="card-title">Cross-Enterprise Identity Management</span>
                 <p>Trusted Connectors authorize each other using a dynamic attribute provisioning service (DAPS). This allows easy cross-enterprise authorization without the hassle of X509v3 cross certification.</p>
             </div>
@@ -41,7 +41,7 @@ Use the Trusted Connector to connect sensors with cloud services and other Conne
 <div class="row">
     <div class="col s12 m6">
         <div class="card hoverable">
-            <div class="card-content">
+            <div class="card-content" style="height:200px">
                 <span class="card-title">Trusted Platform</span>
                 <p>With the trust|me container management and secure boot, the Trusted Connector makes use of a TPM to gurantee the integrity of the software stack from bare metal to applications. A remote attestation protocol makes sure you can rely on your remote party's integrity.</p>
             </div>
@@ -52,7 +52,7 @@ Use the Trusted Connector to connect sensors with cloud services and other Conne
     </div>
     <div class="col s12 m6">
         <div class="card hoverable">
-            <div class="card-content">
+            <div class="card-content" style="height:200px">
                 <span class="card-title">Data Usage Control</span>
                 <p>Control the flow of data with LUCON policies and bind remote data usage to obligations. Rely on attested trustworthy platforms to enforce obligations and make sure your message routes comply with security policies and legislation.</p>
             </div>
@@ -113,9 +113,6 @@ No matter whether Docker or trust\|me is used, any image from the Trusted Connec
 
 
 <span style="height:50px;display:block;"></span>
-<a name="trustedplatform"></a>
-## Trusted Platform
-
 
 <div style="text-align:center">
     <img width="640" src="../../assets/img/overview.png"/>
@@ -127,10 +124,6 @@ For mandatory access control, trust\|me adds a custom Linux Security Module (LSM
 
 For a more detailed description of the architecture see our publication _Manuel Huber, Julian Horsch, Michael Velten, Michael Weiss, Sascha Wessel. [A Secure Architecture for Operating System-Level Virtualization on Mobile Devices](http://link.springer.com/chapter/10.1007/978-3-319-38898-4_2). In Information Security and Cryptology 2016, pp. 430-450_
 
-
-__Trusted Container Management Layer__
-
-tbd
 
 __Core Container__
 
@@ -162,7 +155,7 @@ Applications come in the form of Docker containers. No matter whether Docker or 
 ## Cross-Enterprise Identity Management
 To connect data sources across trust boundaries, a homogenous concept for identity management is mandatory. All IDS Connectors possess a unique identifier embedded in a X.509 certificate that identifies every connector instance. Attributes that can be dynamic in nature (e.g., IDS membership or certification status) are embedded into a dynamic token. This way, a flexible and extensible identity management is achieved. 
 
-### Identity tokens
+#### Identity tokens
 Every connector needs three identity tokens:
 * A device certificate (X.509v3)
 * A TLS connection certificate (X.509v3)
@@ -178,7 +171,7 @@ The TLS connection certificate is used for TLS tunneling. This certificate is au
 
 The 'Dynamic Attribute Token' is an OAuth Access Token, signed by the Dynamic Attribute Provisioning Service (DAPS). This is a short-lived token that contains attributes that the connector possesses.
 
-### Authorization workflow
+#### Authorization workflow
 
 When a resource on a connector is accessed, an access token needs to be presented by the requesting connector. This is performed automatically with a run of the IDSCP.
 
@@ -192,7 +185,7 @@ The general workflow is:
 An alternative configuration option would be to introduce a local or use-case specific Authorization Service that provides a custom access token. This is completely optional and thus marked grey.
 * The respective token is then handed to a Connector with every resource access request.
 
-### Dynamic Access Token issuance
+#### Dynamic Access Token issuance
 <div style="text-align:center">
     <img width="500" src="../../assets/img/token_exchange.png"/>
 </div>
