@@ -1,15 +1,19 @@
 ---
 layout: doc
-title: Connecting REST Apps
+title: Connect REST Apps Using the IDS
 permalink: /docs/rest/
 
 ---
 
-In this tutorial you will set up a minimal scenario for retrieving data from a sensor and displaying it on a webpage, demonstrating different mechanisms of the trusted IDS connector:
+In this tutorial you will set up a minimal but representative scenario of parties exchanging data over their Trusted Connectors. It will include the following components:
+
+* a data _provider_ that uses an app running on the Trusted Connector stack to receive sensor data from an MQTT broker and forward it over the IDS protocol to the consumer.
+* a data _consumer_ that receives data from the provider over the IDS protocol, transforms it into a REST call and sends it to web application running on the Trusted Connector stack.
+* a _trusted third party_ (TTP) that maintains a list of trusted PCR registers.
 
 ##### Hosting Apps
 
-The scenario includes two data apps: a __Provider App__ which retrieves sensor data from outside of the IDS and provides it as a REST service and a __Consumer App__ which retrieves data via REST and displays it in a webpage. The scenario shows how any application can be hosted by the Trusted Connector, as long as it is wrapped in a Docker or trustme container
+The scenario includes two data apps: a __Provider App__ which retrieves sensor data from outside of the IDS and provides it as a REST service and a __Consumer App__ which retrieves data via REST and displays it in a webpage. The scenario demonstrates how any application can be hosted by the Trusted Connector, as long as it is wrapped in a Docker or trustme container
 
 * no matter which language it is programmed in
 * no matter whether it has been written to run in an IDS connector or on any other platform. Apps do not have to be IDS-aware - in this scenario they use simple REST interfaces.
@@ -31,7 +35,7 @@ So, the conversion is: _MQTT -->  REST (text/plain) --> IDSP (binary blob) --> R
 
 ## Unzip Example Setup
 
-Download the [trusted-connector-examples_0.9](https://github.com/industrial-data-space/trusted-connector/blob/develop/examples/trusted-connector-examples_0.9.zip?raw=true) file. Unzip the file in some folder and go to the contained folder `example-009`.
+Download the [trusted-connector-examples_1.0](https://github.com/industrial-data-space/trusted-connector/blob/develop/examples/trusted-connector-examples_1.0.zip?raw=true) file. Unzip the file in some folder and go to the contained folder `example-010`.
 
 This folder contains docker-compose descriptions for three main entities: the _Provider Connector_, the _Consumer Connector_, and the _Trusted Third Party_. In a production setup, these three entities would be remotely connected and operated by different owners. For the sake of this example, we will run them on your local machine.
 

@@ -1,17 +1,18 @@
 ---
 layout: doc
-title: Getting Started
+title: Set up a Single Connector
 permalink: /docs/getting_started/
 
 ---
 
 In this part you will learn how to download an instance of the Connector and start it on your computer.
 
-> Note that this tutorial will use the (less secure) docker-based variant of the Connector. The alternative based on trustme comprises a whole OS stack, including the kernel.
+> Note that this tutorial will use the (less secure) docker-based variant of the Trusted Connector. The alternative based on trustme comprises a whole OS stack, including the kernel.
 
-> Note that Windows is not supported because the Trusted Connector requires UNIX domain sockets for internal communication.
+> Note that remote attestation is not supported under Windows because the Trusted Connector requires UNIX domain sockets for internal communication to the TPM daemon.
 
-> Not that in order to run the Trusted Connector in a Virtual Machine, TWO processors need to be assigned. 
+> Note that in order to run the Trusted Connector in a Virtual Machine, at least 2 CPUs must be assigned to the VM.
+
 ### Install Docker
 
 Follow the [instructions from the Docker website](https://www.docker.com/community-edition#/download) to install Docker Community Edition.
