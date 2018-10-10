@@ -109,13 +109,11 @@ In Eclipse, click on _Help_ -> _Install New Software_
 
 <img src="../../assets/img/eclipse_install_new_software.png" width="500"/>
 
-Click on _Add..._ and choose _Archive..._.
+Click on _Add..._ and enter the LUCON update site URL: `https://ids.aisec.fraunhofer.de/eclipse`.
 
 <img src="../../assets/img/eclipse-install-from-archive.png" width="500"/>
 
-Choose the LUCON plugin repository archive `de.fhg.aisec.lucon.repository-[VERSION].zip` and select the LUCON feature.
-
-<img src="../../assets/img/eclipse-install-lucon-feature.png" width="500"/>
+Select and install the _LUCON Policy Editor_ feature.
 
 ## Write a Policy
 
