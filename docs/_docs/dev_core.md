@@ -7,14 +7,14 @@ permalink: /docs/dev_core/
 
 The Core Platform is the connector's application layer part for managing containers, message routes, and usage control policies. It is based on the Java Karaf framework and can be started as a standalone application, within a docker container or as a trust\|me _a0_ container.
 
-##### Prerequisites
+## Prerequisites
 
 * Java 8 (7 won't work, 9 might need extra tweaking of the build)
 * Maven (>= 3.5.3 recommended)
 * yarn (>= 1.6.0 recommended)
 * docker (>= 17.05.0 recommended)
 
-##### Checkout
+## Checkout
 
 Clone the project from Github.
 
@@ -22,7 +22,7 @@ Clone the project from Github.
 git clone https://github.com/industrial-data-space/trusted-connector.git
 ```
 
-##### Build
+## Build
 
 Change into the cloned directory and start the build.
 
@@ -52,7 +52,7 @@ fraunhoferaisec/ttpsim:develop
 The first one is the actual Core Platform. The second one is a simulator for the trusted third party (TTP) which is only needed for integration tests.
 
 
-#### Entering the Shell
+## Entering the Shell
 
 During development, you may want to interact with the shell of the application server. In a production environment, access to the shell must be limited for administrators or the shell must be removed completely. In this development setup, however, the shell can directly be accessed:
 
@@ -64,7 +64,7 @@ If the Core Platform runs in a Docker container, use the following command to en
 docker exec -ti <container_name> /root/bin/client
 ```
 
-#### Managing Features
+## Managing Features
 
 To keep its footprint low, the Core Platform only contains a few protocol adapters for Apache Camel, such as HTTP(S), WebSockets, and OPC-UA. If you need to install further protocol adapters, you may proceed as follows:
 
