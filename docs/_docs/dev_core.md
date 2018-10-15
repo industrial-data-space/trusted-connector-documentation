@@ -45,9 +45,41 @@ Confirm that the management console is available at `http://localhost:8181/`.
 The following Docker images are created and can be started with `docker run -ti --rm --name core-platform <image name>`:
 
 ```
-registry.netsec.aisec.fraunhofer.de/ids/core-platform:develop
-registry.netsec.aisec.fraunhofer.de/ids/core-platform:develop-raspi
-registry.netsec.aisec.fraunhofer.de/ids/ttpsim:develop
+fraunhoferaisec/iot-connector-core-platform:develop
+fraunhoferaisec/ttpsim:develop
 ```
 
-The first one is the actual Core Platform. The second one is the ARM-compatible image tailored to the Raspberry Pi (Raspbian Lite Stretch) platform. The third one is a simulator for the trusted third party (TTP) which is only needed for integration tests.
+The first one is the actual Core Platform. The second one is a simulator for the trusted third party (TTP) which is only needed for integration tests.
+
+
+#### Entering the Shell
+
+During development, you may want to interact with the shell of the application server. In a production environment, access to the shell must be limited for administrators or the shell must be removed completely. In this development setup, however, the shell can directly be accessed:
+
+When running the Core Platform locally with `karaf-assembly/build/assembly/bin/karaf clean debug`, you are immediately dropped into the shell. 
+
+If the Core Platform runs in a Docker container, use the following command to enter the shell.
+
+```
+docker exec -ti <container_name> /root/bin/client
+```
+
+#### Managing Features
+
+To keep its footprint low, the Core Platform only contains a few protocol adapters for Apache Camel, such as HTTP(S), WebSockets, and OPC-UA. If you need to install further protocol adapters, you may proceed as follows:
+
+Enter the shell as described above.
+
+List available features. Grep for `camel-` to limit the list to protocol adapters:
+
+```
+feature:list|grep camel
+```
+
+To install the desired feature, simply use the `feature:install` command. For example, to install MQTT support from the Eclipse Paho package, enter
+
+```
+feature:install camel-paho
+```
+
+In the web dashboard, MQTT will now be listed as a supported component.
