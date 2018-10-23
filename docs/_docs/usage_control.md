@@ -25,41 +25,43 @@ Consider the following example rules.
 
 ```
 flow_rule {
-  id anonymized                       // Rule id
+  id anonymized                                    // Rule id
   description "Do not leak personal or internal data"
-  when publicEndpoint                 // Target identifier
-  receives personal or internal       // Received message labels
-  then drop                           // Drop message
+  when publicEndpoint                              // Target identifier
+  receives { label(personal) or label(internal) }  // Received message labels
+  then drop                                        // Drop message
 }
 ```
 
 In this example, a rule `anonymized` declares that if any service matching the `publicEndpoint` description receives a message that contains a label `personal` or a label `internal`, the message must be dropped and not sent to the service.
 
+<!--
 ##### Data must be deleted after 30 days
 
 ```
 flow_rule {
   id deleteAfterOneMonth              // Rule id
   description "Deletes all hadoop data after 30 days"
-  when service hadoopCluster            // Target identifier
+  when hadoopCluster                  // Target identifier
   receives *                          // Received message labels
   require delete_after_days(X), X<30  // Obligation
     otherwise drop                    // Alternative
 }
 ```
 In this example, a rule `deleteAfterOneMonth` declares that all messages (indicated by `receives *`) sent into a service matching the `hadoopCluster` description must be deleted after 30 days. If the service does not support deletion, the message must be dropped.
+-->
 
 #### Service Descriptions
 
 Flow rules refer to _service_ descriptions. A service description declares a set of services to which rule applies. It consists of the following elements:
 
-* `id` (required) A unique identifier to which any `flow_rule` may refer to.
-* `description` (optional) A string describing the purpose of the rule. It is just for information and has no effect on the policy.
-* `endpoint` (required) A description of the endpoints included in this service description
-* `capabilities` (optional) A description of actions, the service can execute. If a rule requires actions which are not supported, the `otherwise` clause is applied
-* `properties` (optional) Further descriptive properties of the service
-* `removes_label` (optional) Comma-separated list of labels which will be removed from outgoing messages of the service
-* `creates_label`(optional) Comma-separated list of label which will be added to outgoing messages of the service
+- `id` (required) A unique identifier to which any `flow_rule` may refer to.
+- `description` (optional) A string describing the purpose of the rule. It is just for information and has no effect on the policy.
+- `endpoint` (required) A description of the endpoints included in this service description
+- `capabilities` (optional) A description of actions, the service can execute. If a rule requires actions which are not supported, the `otherwise` clause is applied
+- `properties` (optional) Further descriptive properties of the service
+- `removes_label` (optional) Comma-separated list of labels which will be removed from outgoing messages of the service
+- `creates_label`(optional) Comma-separated list of label which will be added to outgoing messages of the service
 
 The first example defines a service that can blind the fields "surname" and "name" and thus removes the label `personal`. Messages that pass this service, will not be dropped by rule `anonymized`.
 
@@ -68,7 +70,7 @@ service {
   id anonymizerService
 
   // Defines the Camel endpoints for which this service description applies, using a specific endpoint address.
-  endpoint address "http://localhost/anonymizer"
+  endpoint 'http://localhost/anonymizer'
 
 
   // Capabilities can be required by a flow_rule. If not required, nothing will happen
@@ -89,7 +91,7 @@ service {
 
   // Defines the Camel endpoints for which this service description applies, using a regular expression.
   // Everything starting with hdfs:// or sql:// applies.
-  endpoint regex("^[hdfs://.+]|[sql://.+]")
+  endpoint '^(hdfs|sql)://.+'
 
 
   // Capabilities can be required by a flow_rule. If not required, nothing will happen
