@@ -14,8 +14,7 @@ LUCON (_Logic based Usage CONtrol_) is a policy language for controlling data fl
 The LUCON policy language comes with an Eclipse plugin for syntax highlighting, code completion and compilation into a format that is understood by the policy decision point within the Connector. Thus the typical workflow is as follows:
 
 1. Write a LUCON policy in Eclipse ([Install Eclipse Plugin](#install-eclipse-plugin)). As you type, Eclipse compiles the policy into a .pl file in the `compiled-policies` folder.
-1. Load the compiled policy file into the Connector
-1. Activate the policy
+2. Load the compiled policy into the Connector & activate it
 
 ### Data Flow Rules
 
@@ -29,13 +28,12 @@ flow_rule {
   description "Do not leak personal or internal data"
   when publicEndpoint                              // Target identifier
   receives { label(personal) or label(internal) }  // Received message labels
-  then drop                                        // Drop message
+  decide drop                                      // Drop message
 }
 ```
 
 In this example, a rule `anonymized` declares that if any service matching the `publicEndpoint` description receives a message that contains a label `personal` or a label `internal`, the message must be dropped and not sent to the service.
 
-<!--
 ##### Data must be deleted after 30 days
 
 ```
@@ -44,12 +42,12 @@ flow_rule {
   description "Deletes all hadoop data after 30 days"
   when hadoopCluster                  // Target identifier
   receives *                          // Received message labels
+  decide allow                        // Allow if requirements fulfilled
   require delete_after_days(X), X<30  // Obligation
     otherwise drop                    // Alternative
 }
 ```
 In this example, a rule `deleteAfterOneMonth` declares that all messages (indicated by `receives *`) sent into a service matching the `hadoopCluster` description must be deleted after 30 days. If the service does not support deletion, the message must be dropped.
--->
 
 #### Service Descriptions
 
@@ -57,7 +55,7 @@ Flow rules refer to _service_ descriptions. A service description declares a set
 
 - `id` (required) A unique identifier to which any `flow_rule` may refer to.
 - `description` (optional) A string describing the purpose of the rule. It is just for information and has no effect on the policy.
-- `endpoint` (required) A description of the endpoints included in this service description
+- `endpoint` (required) A regular expression describing the endpoints matched by this service
 - `capabilities` (optional) A description of actions, the service can execute. If a rule requires actions which are not supported, the `otherwise` clause is applied
 - `properties` (optional) Further descriptive properties of the service
 - `removes_label` (optional) Comma-separated list of labels which will be removed from outgoing messages of the service
@@ -72,10 +70,9 @@ service {
   // Defines the Camel endpoints for which this service description applies, using a specific endpoint address.
   endpoint 'http://localhost/anonymizer'
 
-
   // Capabilities can be required by a flow_rule. If not required, nothing will happen
   capabilities
-    anonymization: personal_data[surname,name]
+    anonymization: personal_data([surname,name])
 
   // Properties describe the service's behavior.
   removes_label personal
@@ -93,12 +90,10 @@ service {
   // Everything starting with hdfs:// or sql:// applies.
   endpoint '^(hdfs|sql)://.+'
 
-
   // Capabilities can be required by a flow_rule. If not required, nothing will happen
   capabilities
     deletion: delete_after_days(X)
 
-  // Properties describe the service's behavior. This one blinds fields "surname" and "name"
   creates_label persisted
 }
 ```
@@ -111,7 +106,7 @@ In Eclipse, click on _Help_ -> _Install New Software_
 
 <img src="../../assets/img/eclipse_install_new_software.png" width="500"/>
 
-Click on _Add..._ and enter the LUCON update site URL: `https://ids.aisec.fraunhofer.de/eclipse`.
+Click on _Add..._ and enter the LUCON update site URL: [https://ids.aisec.fraunhofer.de/eclipse](https://ids.aisec.fraunhofer.de/eclipse).
 
 <img src="../../assets/img/eclipse-update-site.png" width="300"/>
 
