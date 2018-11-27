@@ -5,15 +5,15 @@ permalink: /docs/usage_control/
 
 ---
 
-In this part you will learn how to control data flows within the Connector using LUCON policies.
+In this part you will learn how to control data flows within the Trusted Connector using LUCON policies.
 
 ## Introduction to LUCON
 
-LUCON (*Logic based Usage CONtrol*) is a policy language for controlling data flows between endpoints. The Connector uses [Apache Camel](http://camel.apache.org/) to route messages between services (such as MQTT, REST, or OPC-UA endpoints). The ways how messages may be processed and passed around between services is controlled by LUCON, a simple policy language for message labeling and taint tracking.
+LUCON (*Logic based Usage CONtrol*) is a policy language for controlling data flows between endpoints. The Trusted Connector uses [Apache Camel](http://camel.apache.org/) to route messages between services (such as MQTT, REST, or OPC-UA endpoints). The ways how messages may be processed and passed around between services is controlled by LUCON, a simple policy language for message labeling and taint tracking.
 
 The LUCON policy language comes with an Eclipse plugin for syntax highlighting, code completion and compilation into a format that is understood by the policy decision point within the Connector. Thus the typical workflow is as follows:
 
-1. Write a LUCON policy in Eclipse ([Install Eclipse Plugin](#install-eclipse-plugin)). As you type, Eclipse compiles the policy into a .pl file in the `compiled-policies` folder.
+1. Write a LUCON policy in Eclipse ([Install Eclipse Plugin](#install-eclipse-plugin)). As you type, Eclipse compiles the policy into a .pl (Prolog) file in the `compiled-policies` folder.
 2. Load the compiled policy into the Connector & activate it
 
 ### Data Flow Rules
@@ -32,7 +32,7 @@ flow_rule {
 }
 ```
 
-In this example, a rule `anonymized` declares that if any service matching the `publicEndpoint` description receives a message that contains a label `personal` or a label `internal`, the message must be dropped and not sent to the service.
+In this example, a rule `anonymized` declares that if any service matching the `publicEndpoint` description receives a message that contains a label `personal` or a label `internal`, the message has to be dropped.
 
 ##### Data must be deleted after 30 days
 
@@ -122,4 +122,4 @@ As only calls to a `SanitizerBean` will add the `public` label, the policy guara
 
 <img src="../../assets/img/eclipse-lucon-demo-policy.png" width="700" />
 
-As you type, Eclipse will create a file `demo.pl` in the `compiled-policies` folder. You may look at that file, but there is no need to understand or edit it.
+As you type, Eclipse will create a file `demo.pl` in the `compiled-policies` folder. This file contains Prolog predicates representing the compiled policy. It is not necessary to understand or edit those generated files.
