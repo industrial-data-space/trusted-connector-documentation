@@ -1,11 +1,14 @@
 ---
 layout: doc
-title: Using the IDSCP protocol
+title: Embedding the IDS protocol
 permalink: /docs/idscp/
 
 ---
 
-The IDS Communication Protocol (IDSCP) is the main protocol for secure communication among Trusted Connectors. It is a TLS/WebSocket-based protocol that establishes a bidirectional session between connectors and allows to send any payloads. The payload format is not defined by IDSCP so it can be used as a mere transport layer, leaving it up to the application to send XML, Protobuf, JMS, MQTT, OPC-UA, or any other OSI-layer 7 protocol.
+Trusted Connectors use the _IDS Communication Protocol_ to exchange data over a secure channel. It is a TLS/WebSocket-based protocol that establishes a bidirectional session between connectors and allows to send any payloads. The payload format is not defined by IDSCP so it can be used as a mere transport layer, leaving it up to the application to send XML, Protobuf, JMS, MQTT, OPC-UA, or any other OSI-layer 7 protocol. Instead of using a full-blown Connector, the protocol can also be used by standalone applications either acting as server or as client.
+
+This requires adding the `ids-comm.jar` as a dependency to your Java project. The rest of this page describes how to start a server and how to create a client for for the Trusted Connector.
+
 
 ##### Starting the Server
 
@@ -22,13 +25,13 @@ In this simple example, the server will listen on port 8080, use the attestation
 
 You may want to adapt the configuration:
 
-```java
+``` java
 IdscpServer server =
   new IdscpServer()
     .config(
        new ServerConfiguration.Builder()
           .port(8081)  // Set port to 8081
-          .attestationType(IdsAttestationType.BASIC)  // Use BASIC attestation mode
+          .attestationType(IdsAttestationType.BASIC)  // Use BASIC attestation
           .setKeyStore(ks)  // Use private key from a specific key store
           .ttpUrl(new URI("https://my.remote.party/ttp"))  // Use specific trusted third party for remote attestation
           .build())
@@ -39,7 +42,7 @@ IdscpServer server =
 
 Starting the client is simple. Just create a new `IdscpClient` object and connect to the server's hostname and port.
 
-``` bash
+``` java
 IdscpClient client = new IdscpClient();
 WebSocket wsClient = client.connect("localhost", 8081);
 ```
