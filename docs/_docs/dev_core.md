@@ -30,7 +30,7 @@ Change into the cloned directory and start the build.
 cd ids-webconsole/src/main/resources/www
 yarn install
 cd -
-./gradlew clean install
+./gradlew dockerize --parallel -PdockerTag="develop" -DskipTests
 ```
 
 After a successful build, the Core Platform can be launched with the following command:
