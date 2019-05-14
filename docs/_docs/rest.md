@@ -5,7 +5,7 @@ permalink: /docs/rest/
 
 ---
 
-*This documentation refers to example-010. Older examples (001 and 009) may not be runnable and use a different construction on the provider side: A node app receives the produced MQTT messages and provides them to the connector via a REST interface.*
+*This documentation refers to the most recent version of the examples. Older examples (001 and 009) may not be runnable and use a different construction on the provider side: A node app receives the produced MQTT messages and provides them to the connector via a REST interface.*
 
 In this tutorial you will set up a minimal but representative scenario of parties exchanging data over their Trusted Connectors. It will include the following components:
 
@@ -37,7 +37,13 @@ So, the conversion is: _MQTT -->  IDSCP (binary blob) --> REST (text/plain) --> 
 
 ## Unzip Example Setup
 
-Download the [trusted-connector-examples_1.0](https://github.com/industrial-data-space/trusted-connector/blob/develop/examples/trusted-connector-examples_1.0.zip?raw=true) file. Unzip the file in some folder and go to the contained folder `example-010`.
+Download the [trusted-connector-examples_develop.zip](https://github.com/industrial-data-space/trusted-connector/blob/develop/examples/trusted-connector-examples_develop.zip?raw=true) file. Unzip the file in some folder and `cd` into the contained folder `example`:
+
+```bash
+$ wget https://github.com/industrial-data-space/trusted-connector/blob/develop/examples/trusted-connector-examples_develop.zip?raw=true -O examples.zip
+$ unzip examples.zip
+$ cd example
+```
 
 This folder contains docker-compose descriptions for three main entities: the _Provider Connector_, the _Consumer Connector_, and the _Trusted Third Party_. In a production setup, these three entities would be remotely connected and operated by different owners. For the sake of this example, we will run them on your local machine.
 
@@ -71,4 +77,4 @@ $ docker-compose -f docker-compose-consumer.yaml pull
 $ docker-compose -f docker-compose-consumer.yaml up
 ```
 
-The consumer app exposes a web interface. Open the application's web page at `http://localhost:8081`. You should see temperature values which have been received via the IDSCP.
+The consumer app exposes a web interface. Open the application's web page at `http://localhost:8081`. You should see temperature values which have been received via IDSCP.
