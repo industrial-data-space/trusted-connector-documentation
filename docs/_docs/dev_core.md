@@ -27,10 +27,7 @@ git clone https://github.com/industrial-data-space/trusted-connector.git
 Change into the cloned directory and start the build.
 
 ```
-cd ids-webconsole/src/main/resources/www
-yarn install
-cd -
-./gradlew dockerize --parallel -PdockerTag="develop" -DskipTests
+./gradlew dockerize --parallel -PdockerTag="develop"
 ```
 
 After a successful build, the Core Platform can be launched with the following command:
@@ -45,11 +42,11 @@ Confirm that the management console is available at `http://localhost:8181/`.
 The following Docker images are created and can be started with `docker run -ti --rm --name core-platform <image name>`:
 
 ```
-fraunhoferaisec/iot-connector-core-platform:develop
+fraunhoferaisec/trusted-connector-core:develop
 fraunhoferaisec/ttpsim:develop
 ```
 
-The first one is the actual Core Platform. The second one is a simulator for the trusted third party (TTP) which is only needed for integration tests.
+The first one is the actual core platform. The second one is a simulator for the trusted third party (TTP) which is only needed for integration tests.
 
 
 ## Entering the Shell

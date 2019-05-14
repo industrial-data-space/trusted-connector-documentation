@@ -35,10 +35,13 @@ $ docker-compose --version
 ```
 
 ## Run a Local Connector
-1. Download the [docker-compose.yaml](https://raw.githubusercontent.com/industrial-data-space/trusted-connector/develop/docker-compose.yaml) file and save it in a new folder.
 
-1. Start the connector:
+Download the [trusted-connector-examples_develop.zip](https://github.com/industrial-data-space/trusted-connector/blob/develop/examples/trusted-connector-examples_develop.zip?raw=true) file. Unzip the file in some folder, `cd` into the contained folder `example-getting-started` and start the connector with docker-compose:
+
 ```bash
+$ wget https://github.com/industrial-data-space/trusted-connector/blob/develop/examples/trusted-connector-examples_develop.zip?raw=true -O examples.zip
+$ unzip examples.zip
+$ cd example-getting-started
 $ docker-compose up
 ```
 

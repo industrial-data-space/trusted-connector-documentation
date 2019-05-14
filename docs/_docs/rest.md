@@ -37,12 +37,12 @@ So, the conversion is: _MQTT -->  IDSCP (binary blob) --> REST (text/plain) --> 
 
 ## Unzip Example Setup
 
-Download the [trusted-connector-examples_develop.zip](https://github.com/industrial-data-space/trusted-connector/blob/develop/examples/trusted-connector-examples_develop.zip?raw=true) file. Unzip the file in some folder and `cd` into the contained folder `example`:
+Download the [trusted-connector-examples_develop.zip](https://github.com/industrial-data-space/trusted-connector/blob/develop/examples/trusted-connector-examples_develop.zip?raw=true) file. Unzip the file in some folder and `cd` into the contained folder `example-idscp`:
 
 ```bash
 $ wget https://github.com/industrial-data-space/trusted-connector/blob/develop/examples/trusted-connector-examples_develop.zip?raw=true -O examples.zip
 $ unzip examples.zip
-$ cd example
+$ cd example-idscp
 ```
 
 This folder contains docker-compose descriptions for three main entities: the _Provider Connector_, the _Consumer Connector_, and the _Trusted Third Party_. In a production setup, these three entities would be remotely connected and operated by different owners. For the sake of this example, we will run them on your local machine.

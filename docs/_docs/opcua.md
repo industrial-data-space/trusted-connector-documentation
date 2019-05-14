@@ -9,12 +9,12 @@ In this tutorial you will read sensor measurements from an OPC-UA sensor and for
 
 ## Start the Connector
 
-Download the [trusted-connector-examples_develop.zip](https://github.com/industrial-data-space/trusted-connector/blob/develop/examples/trusted-connector-examples_develop.zip?raw=true) file. Unzip the file in some folder, `cd` into the contained folder `example-opcua` and start the connector with docker-compose:
+Download the [trusted-connector-examples_develop.zip](https://github.com/industrial-data-space/trusted-connector/blob/develop/examples/trusted-connector-examples_develop.zip?raw=true) file. Unzip the file in some folder, `cd` into the contained folder `example-getting-started` and start the connector with docker-compose:
 
 ```bash
 $ wget https://github.com/industrial-data-space/trusted-connector/blob/develop/examples/trusted-connector-examples_develop.zip?raw=true -O examples.zip
 $ unzip examples.zip
-$ cd example-opcua
+$ cd example-getting-started
 $ docker-compose up
 ```
 
