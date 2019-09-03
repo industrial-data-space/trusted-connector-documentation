@@ -5,7 +5,7 @@ permalink: /docs/dev_faq/
 
 ---
 
-The following frequently asked questions (FAQ) were asked concerning the Trusted Connector.
+The following questions (FAQ) are frequently asked by people setting up the Trusted Connector.
 
 - [When switching my system Java version, the gradlew build command still uses its own Java-Version](#when-switching-my-system-java-version-the-gradlew-build-command-still-uses-its-own-java-version)
 - [I can't build the system using the latest node version 12 (2019 05)](#i-cant-build-the-system-using-the-latest-node-version-12-2019-05)
@@ -37,10 +37,6 @@ Build failed with error code: 1
 FAILURE: Build failed with an exception.
 ```
 
-<!-- > ## I can't connect a mysql data source to the connector 
-
-The camel components which are required to access a MySQL data are preloaded in the images
--->
 
 ## What Java Version is currently supported?
 
