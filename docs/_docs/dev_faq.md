@@ -1,6 +1,6 @@
 ---
 layout: doc
-title: Build trustme OS
+title: FAQ
 permalink: /docs/dev_faq/
 
 ---
