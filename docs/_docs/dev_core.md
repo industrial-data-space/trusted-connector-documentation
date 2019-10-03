@@ -1,6 +1,6 @@
 ---
 layout: doc
-title: Build Core Platform
+title: Building the Core Platform
 permalink: /docs/dev_core/
 
 ---
@@ -9,7 +9,7 @@ The Core Platform is the connector's application layer part for managing contain
 
 ## Prerequisites
 
-* Java 8 (7 won't work, 9 might need extra tweaking of the build)
+* Java 8 (7 is not supported. Support for 9+ is work in progress and will become available soon)
 * Maven (>= 3.5.3 recommended)
 * yarn (>= 1.6.0 recommended)
 * docker (>= 17.05.0 recommended)

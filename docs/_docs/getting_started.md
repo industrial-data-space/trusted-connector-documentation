@@ -1,6 +1,6 @@
 ---
 layout: doc
-title: Set up a Single Connector
+title: Setting up a Connector
 permalink: /docs/getting_started/
 
 ---

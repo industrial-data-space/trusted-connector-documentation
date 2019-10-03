@@ -9,6 +9,7 @@ System requirements of the Trusted Connector vary, depending on the chosen conta
 
 The Trusted Connector is designed to have a small minimum footprint, while at the same time supporting large-scale deployments in the cloud .
 
+
 ##### Supported Architectures
 
 The Trusted Connector supports x86 (64b), PowerPC, and ARM architectures (including a Raspberry Pi docker image). The application-layer _Core Platform_ runs either standalone or interacts with a Docker or trustme container management layer.
@@ -41,6 +42,7 @@ table td {
     * ~50 MB for trustme container management layer, or
     * ~300 MB for Raspbian Lite Stretch with docker container management layer
  * At runtime additional ~100 MB should be available
+
 
 ##### Memory Requirements
 

@@ -10,6 +10,7 @@
 
 - title: Developer documentation
   docs:
+  - swagger
   - dev_core
   - dev_trustme
   - convert_docker

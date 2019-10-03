@@ -1,6 +1,6 @@
 ---
 layout: doc
-title: Build trustme OS
+title: Building trustme OS
 permalink: /docs/dev_trustme/
 
 ---
