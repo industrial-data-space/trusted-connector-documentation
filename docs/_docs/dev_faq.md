@@ -11,16 +11,19 @@ The following questions (FAQ) are frequently asked by people setting up the Trus
 - [I can't build the system using the latest node version 12 (2019 05)](#i-cant-build-the-system-using-the-latest-node-version-12-2019-05)
 - [What Java Version is currently supported?](#what-java-version-is-currently-supported)
 
-## When switching my system Java version, the gradlew build command still uses its own Java-Version
+## When switching my system java version, gradlew still uses another Java version
 
-The first gradlew is used and installed it will check which Java-Version is available on the system and install its own version of Java of the same version. If people switch the system's Java Version, then gradlew requires the option:
+The gradlew script has some discovery algorithms to identify the Java version it uses. The Java version used by gradlew can be configured in one of the following ways:
 
-- `./gradlew clean install --parallel -Dorg.gradle.java.home=/path_to_jdk_directory`
-- Additional discussion can be found in threads like this: https://stackoverflow.com/questions/18487406/how-do-i-tell-gradle-to-use-specific-jdk-version
+- Set the JAVA_HOME environment variable to the path of the JDK to be used
+- Temporarily override JAVA_HOME for the current shell: `JAVA_HOME=/path_to_jdk_directory; ./gradlew ...` (Linux bash example, slightly different for Mac OS)
+- Use gradle's `org.gradle.java.home` parameter: `./gradlew ... -Dorg.gradle.java.home=/path_to_jdk_directory`
 
-## I can't build the system using the latest node version 12 (2019 05)
+Discussions regarding this topic can be found in threads like this: https://stackoverflow.com/questions/18487406/how-do-i-tell-gradle-to-use-specific-jdk-version
 
-Building the Trusted Connector using node 12 may result in errors in the build of the webconsole. If you see error similar to the following, we recommend using node 11 instead of 12. 
+## I can't build the system using node version 12 (2019 05)
+
+Building the Trusted Connector using node 12 may result in errors during the build of the webconsole module. If you see errors similar to the following, we recommend switching to a more recent version of the Trusted Connector or downgrading to node 11:
 
 ```coffee
 ...
@@ -40,4 +43,6 @@ FAILURE: Build failed with an exception.
 
 ## What Java Version is currently supported?
 
-The Trusted Connector can currently be built using OpenJDK 8 and Oracle's JDK 8. We are currently working on migrating to OpenJDK 11.
+The Trusted Connector used to be built using OpenJDK 8 and Oracle's JDK 8.
+
+Starting with version 3.0.0, both build process and runtime have been adapted for OpenJDK 11, which is now the recommended platform.

@@ -13,22 +13,22 @@ The shell can be used to manage features and settings in the application server.
 The shell will display a welcome message.
 
 ```
-   _____   _______    _____                            _               
-  |_   _| |__   __|  / ____|                          | |              
-    | |  ___ | |    | |     ___  _ __  _ __   ___  ___| |_ ___  _ __   
-    | | / _ | |    | |    / _ | '_ | '_  / _ / __| __/ _ | '__|  
-   _| || (_) | |    | |___| (_) | | | | | | |  __/ (__| || (_) | |     
-  |________/|_|     ________/|_| |_|_| |_|___|___|_____/|_|     
+Listening for transport dt_socket at address: 5005
+  _____               _           _    ____                            _ 
+ |_   _| __ _   _ ___| |_ ___  __| |  / ___|___  _ __  _ __   ___  ___| |_ ___  _ __ 
+   | || '__| | | / __| __/ _ \/ _` | | |   / _ \| '_ \| '_ \ / _ \/ __| __/ _ \| '__| 
+   | || |  | |_| \__ \ ||  __/ (_| | | |__| (_) | | | | | | |  __/ (__| || (_) | | 
+   |_||_|   \__,_|___/\__\___|\__,_|  \____\___/|_| |_|_| |_|\___|\___|\__\___/|_| 
 
-        IDS Connector Console (1.1.0), Apache Karaf (4.1.2)
+           Trusted Connector Console (3.0.0-SNAPSHOT), Apache Karaf (4.2.7) 
 
-                       Fraunhofer AISEC 2018
+                                 Fraunhofer AISEC 2020 
 
 Hit '<tab>' for a list of available commands
 and '[cmd] --help' for help on a specific command.
-Hit '<ctrl-d>' or 'osgi:shutdown' to shutdown Console.
+Hit '<ctrl-d>' or 'system:shutdown' to shutdown Console.
 
-karaf@root()>       
+karaf@root()>
 ```
 
 # Most important commands

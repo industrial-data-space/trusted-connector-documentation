@@ -5,12 +5,13 @@ permalink: /docs/dev_core/
 
 ---
 
-The Core Platform is the connector's application layer part for managing containers, message routes, and usage control policies. It is based on the Java Karaf framework and can be started as a standalone application, within a docker container or as a trust\|me _a0_ container.
+The Core Platform is the connector's application layer part for managing containers, message routes, and usage control policies. It is based on the Apache Karaf framework and can be started as a standalone application, within a docker container or as a trust\|me _a0_ container.
 
 ## Prerequisites
 
-* Java 8 (7 is not supported. Support for 9+ is work in progress and will become available soon)
+* Java Development Kit (JDK) 11
 * Maven (>= 3.5.3 recommended)
+* npm (>= 10 recommended)
 * yarn (>= 1.6.0 recommended)
 * docker (>= 17.05.0 recommended)
 
@@ -46,7 +47,7 @@ fraunhoferaisec/trusted-connector-core:develop
 fraunhoferaisec/ttpsim:develop
 ```
 
-The first one is the actual core platform. The second one is a simulator for the trusted third party (TTP) which is only needed for integration tests.
+The first one is the actual core platform. The second one is a simulator for the trusted third party (TTP) which is only needed for remote attestation (RAT) simulation.
 
 
 ## Entering the Shell
