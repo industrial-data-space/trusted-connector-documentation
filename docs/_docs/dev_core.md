@@ -11,9 +11,11 @@ The Core Platform is the connector's application layer part for managing contain
 
 * Java Development Kit (JDK) 11
 * Maven (>= 3.5.3 recommended)
-* npm (>= 10 recommended)
+* nodejs (>= 12 recommended)
+* npm (>= 6.7.0 recommended)
 * yarn (>= 1.6.0 recommended)
 * docker (>= 17.05.0 recommended)
+* protobuf-compiler (or other package that provides `protoc`)
 
 ## Checkout
 
