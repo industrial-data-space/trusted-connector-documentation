@@ -7,10 +7,10 @@
 
 #####################
 # Site configs
-title: Trusted Connector
+title: IDS Trusted Connector
 owner:
   name: Industrial Data Space, Fraunhofer AISEC
-  link: http://www.industrialdataspace.org
+  link: http://www.aisec.fraunhofer.de
   email: info@aisec.fraunhofer.de
 description: Industrial Data Space
 baseurl: "/trusted-connector-documentation" # the subpath of your site, e.g. /blog

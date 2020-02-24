@@ -7,9 +7,9 @@ permalink: /docs/overview/
 
 <h3 class="teal-text text-darken-1">A secure IoT gateway platform.</h3>
 
-The Trusted Connector is an open IoT edge gateway platform and a reference implementation of the Industrial Data Space Connector. It is currently being standardized as DIN Spec 27070.
+The IDS Trusted Connector is an open IoT edge gateway platform and an implementation of the Trusted Connector in the [Industrial Data Space Reference Architecture](https://www.fraunhofer.de/content/dam/zv/en/fields-of-research/industrial-data-space/IDS-Reference-Architecture-Model.pdf), following the [DIN Spec 27070](https://www.beuth.de/de/technische-regel/din-spec-27070/319111044) and ISO 62443-3 standards.
 
-Use the Trusted Connector to connect sensors with cloud services and other Connectors, using a vast range of protocol adapters. Security mechanisms like secure boot, remote platform attestation and data usage control allow you stay in control over your data and support you in GDPR compliance and auditing. The Trusted Connector is open source and built on open standards to avoid vendor lock-in.
+Use the Trusted Connector to connect sensors with cloud services and other Connectors, using a vast range of protocol adapters. Security mechanisms like secure boot, remote platform attestation and data usage control allow you stay in control over your data. The Trusted Connector is open source and built on open standards to avoid vendor lock-in.
 
 
 <h2>Main Features</h2>
