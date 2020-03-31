@@ -53,7 +53,6 @@ This folder contains docker-compose descriptions for three main entities: the _P
 Pull and start the Trusted Third Party (TTP) which holds trusted PCR values for remote attestation.
 
 ``` bash
-$ docker-compose -f docker-compose-ttp.yaml pull
 $ docker-compose -f docker-compose-ttp.yaml up
 ```
 
@@ -63,7 +62,6 @@ $ docker-compose -f docker-compose-ttp.yaml up
 Pull and start the __Provider Connector__. It includes a simple node app which provides temperature values via a MQTT topic. A message route will connect to this MQTT topic, receive the values and push them to the __Consumer Connector__ over the IDSCP. The _Provider Connector_ also includes a TPM daemon and a TPM 2.0 simulator for remote attestation simulation.
 
 ``` bash
-$ docker-compose -f docker-compose-provider.yaml pull
 $ docker-compose -f docker-compose-provider.yaml up
 ```
 
@@ -73,7 +71,6 @@ $ docker-compose -f docker-compose-provider.yaml up
 Pull and start the __Consumer Connector__. It receives sensor values over the secured and remotely attested IDSCP and forwards it to a simple node app running in the __Consumer Connector__. The node app receives data via HTTP POST requests and displays it in a web page.
 
 ``` bash
-$ docker-compose -f docker-compose-consumer.yaml pull
 $ docker-compose -f docker-compose-consumer.yaml up
 ```
 

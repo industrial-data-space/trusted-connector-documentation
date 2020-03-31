@@ -7,9 +7,27 @@ permalink: /docs/dev_faq/
 
 The following questions (FAQ) are frequently asked by people setting up the Trusted Connector.
 
+- [I found a bug](#i-found-a-bug)
+- [Do I have to build the Trusted Connector to try out the examples?](#do-i-have-to-build-the-trusted-connector-to-try-out-the-examples)
+- [I have connectivity issues](#i-have-connectivity-issues)
 - [When switching my system Java version, the gradlew build command still uses its own Java-Version](#when-switching-my-system-java-version-the-gradlew-build-command-still-uses-its-own-java-version)
 - [I can't build the system using the latest node version 12 (2019 05)](#i-cant-build-the-system-using-the-latest-node-version-12-2019-05)
 - [What Java Version is currently supported?](#what-java-version-is-currently-supported)
+
+
+## I found a bug
+
+OK, if you are sure that you found an actual bug, and the issue is not caused by some corporate network structures or similar, then please file an issue on GitHub. We will check the issue and reply you ASAP. An answer can sometimes take a few days or weeks, since we work on various projects and have to schedule our capacities accordingly.
+
+## Do I have to build the Trusted Connector to try out the examples?
+
+No, you don't need to. If you don't want to modify the source code of the connector or modules before runtime, you can always use our images from DockerHub. Images are provided for the platforms `linux/amd64`, `linux/arm/v7` and `linux/arm64/v8`.
+
+The `develop` tags are our bleeding edge builds that run whenever we push to the respective git branch. You may encounter errors with this version. If you need a stable environment, please use the `latest` image which reflects the most recent stable release version.
+
+## I have connectivity issues
+
+When experiencing connectivity issues during docker build, gradle build, or even at runtime, 95% of the time there is some proxy or DNS filter installed in your corporation that blocks direct HTTP(S) or DNS. Fixing that is possible, but tricky. Please look around on StackOverflow and similar sources for directions, or ask your IT to provide your testing system direct access to the web. As the precise reasons are manyfold, **we cannot provide support for those issues!** Docker container, for instance, will always try to resolve using Google DNS (8.8.8.8 and 8.8.4.4) by default.
 
 ## When switching my system java version, gradlew still uses another Java version
 
@@ -40,9 +58,8 @@ Build failed with error code: 1
 FAILURE: Build failed with an exception.
 ```
 
-
 ## What Java Version is currently supported?
 
 The Trusted Connector used to be built using OpenJDK 8 and Oracle's JDK 8.
 
-Starting with version 3.0.0, both build process and runtime have been adapted for OpenJDK 11, which is now the recommended platform.
+Starting with version 2.0.0, both build process and runtime have been adapted for **OpenJDK 11**, which is now the recommended platform.
