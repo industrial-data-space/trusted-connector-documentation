@@ -68,7 +68,7 @@ Use the Trusted Connector to connect sensors with cloud services and other Conne
 <span style="height:30px;display:block;"></span>
 <a name="apps"></a>
 ## App Isolation
-The isolation between Apps is based on the isolation between containers. The Core Container is a privileged container running the Core Container Stack, whick takes care of all management and routing tasks. The architecture provides OS-level virtualization. This means the kernel is shared between all container instances. Kernel security mechanisms are used to provide user space virtualization. Access to hardware interfaces (like network interfaces) can be limited to specific containers. In a default configuration, only the core container is allowed to communicate with the outside. Service containers can only be accessed over data routes configured there.
+The isolation between Apps is based on the isolation between containers. The Core Container is a privileged container running the Core Container Stack, which takes care of all management and routing tasks. The architecture provides OS-level virtualization. This means the kernel is shared between all container instances. Kernel security mechanisms are used to provide user space virtualization. Access to hardware interfaces (like network interfaces) can be limited to specific containers. In a default configuration, only the core container is allowed to communicate with the outside. Service containers can only be accessed over data routes configured there.
 
 <div style="text-align:center">
     <img width="500" src="../../assets/img/trustme_arch.png"/>
