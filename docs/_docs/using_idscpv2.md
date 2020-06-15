@@ -1,7 +1,7 @@
 ---
 layout: doc
 title: Using IDSCPv2
-permalink: /docs/idscp/
+permalink: /docs/using_idscpv2/
 
 ---
 As stated in the section before, Trusted Connectors use the _IDS Communication Protocol_ to exchange data over a secure channel. It is a TLS/WebSocket-based protocol that establishes a bidirectional session between connectors and allows to send any payloads.
