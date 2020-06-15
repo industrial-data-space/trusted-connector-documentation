@@ -21,7 +21,7 @@ IdscpServer server =
    .start();
 ```
 
-In this simple example, the server will listen on port 8080, use the attestation type `BASIC`, the TLS private key from the default keystore and will not contact any third party to verify the trustworthiness of the remote party, i.e. the remote attestation will never succeed. 
+In this simple example, the server will listen on port 8080, use the attestation type `BASIC`, the TLS private key from the default keystore and will not contact any third party to verify the trustworthiness of the remote party, i.e. the remote attestation will never succeed.
 
 You may want to adapt the configuration:
 
