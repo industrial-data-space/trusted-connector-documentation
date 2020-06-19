@@ -17,17 +17,19 @@ The following questions (FAQ) are frequently asked by people setting up the Trus
 
 ## I found a bug
 
-OK, if you are sure that you found an actual bug, and the issue is not caused by some corporate network structures or similar, then please file an issue on GitHub. We will check the issue and reply you ASAP. An answer can sometimes take a few days or weeks, since we work on various projects and have to schedule our capacities accordingly.
+If you run into any bugs, please [file a bug report on GitHub](https://github.com/industrial-data-space/trusted-connector/issues). We will check the issue and reply as soon as possible.
 
 ## Do I have to build the Trusted Connector to try out the examples?
 
-No, you don't need to. If you don't want to modify the source code of the connector or modules before runtime, you can always use our images from DockerHub. Images are provided for the platforms `linux/amd64`, `linux/arm/v7` and `linux/arm64/v8`.
+We provide the Core Platform of the Trusted Connector as ready-to-run docker images for `linux/amd64`, `linux/arm/v7` and `linux/arm64/v8`. [Just head over to DockerHub to get started](https://hub.docker.com/r/fraunhoferaisec/trusted-connector-core).
 
 The `develop` tags are our bleeding edge builds that run whenever we push to the respective git branch. You may encounter errors with this version. If you need a stable environment, please use the `latest` image which reflects the most recent stable release version.
 
+If you want to run the Core Platform on the underlying trustme OS, you will need to build a bootable trustme image [as explained here](https://industrial-data-space.github.io/trusted-connector-documentation/docs/dev_trustme/).
+
 ## I have connectivity issues
 
-When experiencing connectivity issues during docker build, gradle build, or even at runtime, 95% of the time there is some proxy or DNS filter installed in your corporation that blocks direct HTTP(S) or DNS. Fixing that is possible, but tricky. Please look around on StackOverflow and similar sources for directions, or ask your IT to provide your testing system direct access to the web. As the precise reasons are manyfold, **we cannot provide support for those issues!** Docker container, for instance, will always try to resolve using Google DNS (8.8.8.8 and 8.8.4.4) by default.
+When experiencing connectivity issues during docker build, gradle build, or even at runtime, 95% of the time there is some proxy or DNS filter installed in your corporation. Fixing that is possible, but tricky. Please look around on StackOverflow and similar sources for directions, or ask your IT department to provide your testing system direct access to the web. Docker container, for instance, will always try to resolve using Google DNS (8.8.8.8 and 8.8.4.4) by default, so make sure this DNS is reachable from your network.
 
 ## When switching my system java version, gradlew still uses another Java version
 
@@ -41,7 +43,7 @@ Discussions regarding this topic can be found in threads like this: https://stac
 
 ## I can't build the system using node version 12 (2019 05)
 
-Building the Trusted Connector using node 12 may result in errors during the build of the webconsole module. If you see errors similar to the following, we recommend switching to a more recent version of the Trusted Connector or downgrading to node 11:
+Building of older versions of the Trusted Connector using node 12 may result in errors during the build of the webconsole module. If you see errors similar to the following, we recommend switching to a more recent version of the Trusted Connector or downgrading to node 11:
 
 ```coffee
 ...
@@ -58,8 +60,6 @@ Build failed with error code: 1
 FAILURE: Build failed with an exception.
 ```
 
-## What Java Version is currently supported?
+## What Java version is currently supported?
 
-The Trusted Connector used to be built using OpenJDK 8 and Oracle's JDK 8.
-
-Starting with version 2.0.0, both build process and runtime have been adapted for **OpenJDK 11**, which is now the recommended platform.
+The Trusted Connector uses OpenJDK 11.
