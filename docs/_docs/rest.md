@@ -75,3 +75,7 @@ $ docker-compose -f docker-compose-consumer.yaml up
 ```
 
 The consumer app exposes a web interface. Open the application's web page at `http://localhost:8081`. You should see temperature values which have been received via IDSCP.
+
+## Access ports from your machine
+
+To access docker container ports, make sure to uncomment the respective 'port' settings in the .yaml file (either consumer or provider side).
