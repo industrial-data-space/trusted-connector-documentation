@@ -1,0 +1,14 @@
+@startuml
+!pragma teoz true
+title **ContractAgreement Msg Processors**
+
+"IDSCP2-Client" -> "IDSCP2-Client": ContractRequestMsgCreation
+
+"IDSCP2-Client" -> "IDSCP2-Server": **ContractRequestMessage**
+& "IDSCP2-Server" -> "IDSCP2-Server": ContractRequestProcessor
+
+"IDSCP2-Server" -> "IDSCP2-Client": **ContractResponseMessage**
+"IDSCP2-Client" -> "IDSCP2-Client": ContractResponseProcessor
+
+"IDSCP2-Client" -> "IDSCP2-Server": **ContractAgreementMessage**
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+!pragma teoz true
+title **ArtifactRequest Msg Processors**
+
+"IDSCP2-Client" -> "IDSCP2-Client": ArtifactRequestMsgCreation
+"IDSCP2-Client" -> "IDSCP2-Server": **ArtifactRequestMessage**
+& "IDSCP2-Server" -> "IDSCP2-Server": ArtifactRequestProcessor
+"IDSCP2-Server" -> "IDSCP2-Client": **ArtifactResponseMessage**
+"IDSCP2-Client" -> "IDSCP2-Client": ArtifactResponseProcessor
+@enduml
