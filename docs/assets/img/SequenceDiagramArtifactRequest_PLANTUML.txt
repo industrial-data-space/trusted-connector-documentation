@@ -1,0 +1,16 @@
+@startuml
+!pragma teoz true
+
+title **ArtifactRequest Msg Flow**
+
+"IDSCP2-Client"->"IDSCP2-Server": **ArtifactRequestMessage**
+& "IDSCP2-Server" -> "IDSCP2-Server": checks ArtifactRequest
+alt no artifact available
+	"IDSCP2-Server" -> "IDSCP2-Client": **RejectionMessage**
+else no contract for artifact
+	"IDSCP2-Server" -> "IDSCP2-Client": **RejectionMessage**
+else artifact authorised and available 
+"IDSCP2-Server" -> "IDSCP2-Client": **ArtifactResponseMessage**
+end
+
+@enduml
