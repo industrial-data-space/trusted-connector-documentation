@@ -5,7 +5,7 @@ permalink: /docs/idscp/
 
 ---
 
-Trusted Connectors use the _IDS Communication Protocol_ to exchange data over a secure channel. It is a TLS/WebSocket-based protocol that establishes a bidirectional session between connectors and allows to send any payloads. The payload format is not defined by IDSCP so it can be used as a mere transport layer, leaving it up to the application to send seralized messages in XML, Protobuf, JMS, MQTT, OPC-UA, or any other OSI-layer 7 message format. Instead of using a full-blown Connector, the protocol can also be used by standalone applications either acting as server or as client.
+Trusted Connectors use the _IDS Communication Protocol_ to exchange data over a secure channel. It is a TLS/WebSocket-based protocol that establishes a bidirectional session between connectors and allows to send any payloads. The payload format is not defined by IDSCP so it can be used as a mere transport layer, leaving it up to the application to send seralized messages in XML, Protobuf, JMS, MQTT payloads, OPC-UA, or any other OSI-layer 7 message format. Instead of using a full-blown Connector, the protocol can also be used by standalone applications either acting as server or as client.
 
 This requires adding the `ids-comm.jar` as a dependency to your Java project. The rest of this page describes how to start a server and how to create a client for for the Trusted Connector.
 
