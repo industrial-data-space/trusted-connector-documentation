@@ -4,8 +4,8 @@ title: Using IDSCPv2
 permalink: /docs/using_idscpv2/
 
 ---
-As stated in the section before, Trusted Connectors use the _IDS Communication Protocol_ to exchange data over a secure channel. It is a TLS/WebSocket-based protocol that establishes a bidirectional session between connectors and allows to send any payloads.
-In IDSCPv2, a full out-of-the-box bidirectional message exchange is supported. 
+As stated in the section before, Trusted Connectors use the _IDS Communication Protocol_ to exchange data over a secure channel. Speaking for IDSCPv1, it is a TLS/WebSocket-based protocol that establishes a bidirectional session between connectors and allowes to send any payloads.
+In IDSCPv2, a full out-of-the-box bidirectional message exchange is supported and several modifications on the technical baseline are were performed. The protocol is now purely based on TCP/IP and protobuf. All dependencies to Websockets (and thus, the needed web stack, have been removed).  
 IDS Message types are supported as well for client/server interaction which are explained in the following sections on a conceptual and technical level. 
 
 ## New Features Compared to IDSCPv1
