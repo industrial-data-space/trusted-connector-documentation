@@ -9,8 +9,6 @@ In this part you will learn how to download an instance of the Connector and sta
 
 > Note that this tutorial will use the (less secure) docker-based variant of the Trusted Connector. The alternative based on trustme comprises a whole OS stack, including the kernel.
 
-> Note that remote attestation is not supported under Windows because the Trusted Connector requires UNIX domain sockets for internal communication to the TPM daemon.
-
 > Note that in order to run the Trusted Connector in a Virtual Machine, at least 2 CPUs must be assigned to the VM.
 
 ### Install Docker
@@ -51,13 +49,6 @@ The login is `ids`:`ids`.
 
 ## What did just happen?
 
-You installed docker on your machine, downloaded and started a docker-compose definition. This pulled three different docker container images from a remote registry:
-
-* Core Platform Container
-* TPM 2.0 Simulator
-* Remote Attestation Repository
+You downloaded and started a docker-compose definition. This pulled the Trusted Connector core platform image and created a container from it.
 
 The Core Platform container is the heart of the Trusted Connector. It is responsible for establishing communication to other connectors, routes messages between containers and configures the Trusted Connector.
-The TPM 2.0 simulator is a software trusted platform module which is responsible for attesting the integrity of the stack.
-
-> In a _real_ setup, the TPM is a hardware module, but for the moment we keep it simple.

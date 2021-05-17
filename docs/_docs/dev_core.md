@@ -21,8 +21,6 @@ If you want to build the core platform without the `build-container` (used by `b
 * Java Development Kit (JDK) 11
 * Maven (>= 3.5.3 recommended)
 * nodejs (>= 12 recommended)
-* npm (>= 6.7.0 recommended)
-* yarn (>= 1.6.0 recommended)
 * protobuf-compiler (or other package that provides `protoc`)
 
 ## Checkout
@@ -58,7 +56,7 @@ Confirm that the management console is available at `http://localhost:8181/`.
 If building of docker images from the artifacts built in the previous step is desired, you can either
 
 * build them manually using the `Dockerfile` in the respective module directories (karaf-assembly/Dockerfile for the TC core, for instance) or
-* enable experimental CLI features in docker (see https://docs.docker.com/engine/reference/commandline/cli/#experimental-features) and run `./buildx/docker-buildx.sh` (issue `chmod +x ./buildx/docker-buildx.sh` before if the script has not yet been marked executable). This will build all relevant containers for the current platform (including ttpsim, tpmsim, and IDSCP example images).
+* enable experimental CLI features in docker (see https://docs.docker.com/engine/reference/commandline/cli/#experimental-features) and run `./buildx/docker-buildx.sh` (issue `chmod +x ./buildx/docker-buildx.sh` before if the script has not yet been marked executable). This will build all relevant images for the current platform.
 
 ## Entering the Shell
 

@@ -7,12 +7,12 @@ permalink: /docs/system_requirements/
 
 System requirements of the Trusted Connector vary, depending on the chosen container management layer and the services running in the Core Platform. The following requirements should be considered as reasonable minimum requirements.
 
-The Trusted Connector is designed to have a small minimum footprint, while at the same time supporting large-scale deployments in the cloud .
+The Trusted Connector is designed to have a small minimum footprint, while at the same time supporting large-scale deployments in the cloud.
 
 
 ##### Supported Architectures
 
-The Trusted Connector supports x86 (64b), PowerPC, and ARM architectures (including a Raspberry Pi docker image). The application-layer _Core Platform_ runs either standalone or interacts with a Docker or trustme container management layer.
+The Trusted Connector supports x86 (amd64), PowerPC, and ARM architectures (including a Raspberry Pi docker image). The _Core Platform_ runs either standalone or interacts with a Docker or trustme container management layer.
 
 It is tested for the following platforms:
 
