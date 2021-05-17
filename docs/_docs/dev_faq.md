@@ -15,6 +15,14 @@ The following questions (FAQ) are frequently asked by people setting up the Trus
 - [What Java Version is currently supported?](#what-java-version-is-currently-supported)
 
 
+## I heard about an IDSCP protocol based on WebSockets, where to find it?
+
+The old IDSCP (version 1) protocol was based on WebSockets.
+However, its code was poorly written, poorly maintained, and typically relied on WebSocket libraries with lots of dependencies and overhead.
+
+Due to this and other design decisions, IDSCP2 was newly implemented using TCP/IP directly. The old IDSCP protocol has been removed with TC release 4.0.0.
+Due to its modular architecture, a WebSocket-based transport protocol for IDSCP2 could be implemented. However, this is not planned for the near future at the moment.
+
 ## I found a bug
 
 If you run into any bugs, please [file a bug report on GitHub](https://github.com/industrial-data-space/trusted-connector/issues). We will check the issue and reply as soon as possible.
@@ -43,6 +51,7 @@ Discussions regarding this topic can be found in threads like this: https://stac
 
 ## What Java Version is currently supported?
 
-The Trusted Connector used to be built using OpenJDK 8 and Oracle's JDK 8.
+The Trusted Connector uses **OpenJDK 11** for both build and runtime.
 
-The Trusted Connector uses OpenJDK 11.
+The Trusted Connector used to be built using OpenJDK 8 or Oracle's JDK 8 before version 2.0.0, but this is not officially supported anymore.
+You may change the Gradle build files for JDK 8 support at your own risk, don't expect support.
