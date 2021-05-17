@@ -1,23 +1,23 @@
 ---
 layout: doc
-title: Using IDSCPv2
-permalink: /docs/using_idscpv2/
+title: Using IDSCP2
+permalink: /docs/using_IDSCP2/
 
 ---
-As stated in the section before, Trusted Connectors use the _IDS Communication Protocol_ to exchange data over a secure channel. Speaking for IDSCPv1, it is a TLS/WebSocket-based protocol that establishes a bidirectional session between connectors and allowes to send any payloads.
-In IDSCPv2, a full out-of-the-box bidirectional message exchange is supported and several modifications on the technical baseline are were performed. The protocol is now purely based on TCP/IP and protobuf. All dependencies to Websockets (and thus, the needed web stack, have been removed).  
-IDS Message types are supported as well for client/server interaction which are explained in the following sections on a conceptual and technical level. 
+As stated in the section before, Trusted Connectors use the _IDS Communication Protocol 2_ to exchange data over a secure channel. The IDSCP version 1 protocol used to provide a WebSocket-based protocol that established a limited, bidirectional session between connectors and allowed to send any payloads.
+In IDSCP2, a full out-of-the-box bidirectional message exchange is supported and several modifications on the technical baseline were performed. The protocol is now purely based on TCP/IP and protobuf. Dependencies to Websockets (and thus, the needed web stack), have been removed.  
+IDS Message types are supported as well for client/server interaction, which are explained in the following sections on a conceptual and technical level. 
 
-## New Features Compared to IDSCPv1
+## New Features Compared to IDSCP
 
 * Bidirectional messages for client and server setup using Apache Camel
 * IDS Message support
 * Message Broadcast support
 * Usage Control information support
 
-## IDSCPv2 Message Types
+## IDSCP2 Message Types
 
-Introducing message types in IDSCPv2, different message types are now supported that allow for integration into generic IDS communication patterns. The message type is held within a header field called 'idscp2.type'. The list of IDS message types that are specified by the [IDS Information Model Messages](https://htmlpreview.github.io/?https://github.com/IndustrialDataSpace/InformationModel/blob/feature/message_taxonomy_description/model/communication/Message_Description.htm) We are currently working on providing workflows which treat all the IDS Message types.
+Introducing message types in IDSCP2, different message types are now supported that allow for integration into generic IDS communication patterns. The message type is held within a header field called 'idscp2.type'. The list of IDS message types that are specified by the [IDS Information Model Messages](https://htmlpreview.github.io/?https://github.com/IndustrialDataSpace/InformationModel/blob/feature/message_taxonomy_description/model/communication/Message_Description.htm) We are currently working on providing workflows which treat all the IDS Message types.
 
 Currently the following IDS Message types are implemented using sample Camel Routes: 
 * ArtifactRequestMessage
@@ -28,13 +28,13 @@ Currently the following IDS Message types are implemented using sample Camel Rou
 * RejectionMessage
 * ContractRejectionMessage
 
-## Using IDSCPv2 in a Camel route
-The intrinsic bidirectional usage of IDSCPv2 allows for new communication patterns, but also calls for new route definitions.
+## Using IDSCP2 in a Camel route
+The intrinsic bidirectional usage of IDSCP2 allows for new communication patterns, but also calls for new route definitions.
 
 ### Client to server communication
-#### Using IDSCPv2 as a passive (receiving) server component
+#### Using IDSCP2 as a passive (receiving) server component
 
-To set up a server with IDSCPv2, a route is created to listen for incoming connections on the specified port (29292) and a arbitrary IP address. These connections will be forwarded to the idscpv2server Camel component that will process the request.
+To set up a server with IDSCP2, a route is created to listen for incoming connections on the specified port (29292) and a arbitrary IP address. These connections will be forwarded to the IDSCP2server Camel component that will process the request.
 
 In this example, whenever a message is transmitted to the defined endpoint, a automated reply is generated ('PONG') and the message type is set to the type 'pong'.
 
@@ -52,9 +52,9 @@ In this example, whenever a message is transmitted to the defined endpoint, a au
 </route>
 ```
  
-#### Using IDSCPv2 as a sending client component
+#### Using IDSCP2 as a sending client component
 
-To set up IDSCPv2 as a client component in true bidirectional mode, two routes need to be created. The first route generates a message with content 'PING' and message type 'ping'. the second one processes the response from the server component. The first <from> statement creates an empty message every 10s (period=10,000ms).
+To set up IDSCP2 as a client component in true bidirectional mode, two routes need to be created. The first route generates a message with content 'PING' and message type 'ping'. the second one processes the response from the server component. The first <from> statement creates an empty message every 10s (period=10,000ms).
 
 ```xml
 <route id="idscp2SenderClient">
@@ -78,7 +78,7 @@ To set up IDSCPv2 as a client component in true bidirectional mode, two routes n
 ```
 
 ### Server to client communication
-#### Using IDSCPv2 as a active (sending) server component
+#### Using IDSCP2 as a active (sending) server component
 To generate broadcast messages to all connected clients, is is possible to set up a server route locally. This way, a server that sends a message to its own endpoint will broadcast this message to all connected clients.
 
 ```xml
@@ -96,7 +96,7 @@ To generate broadcast messages to all connected clients, is is possible to set u
 ```
 
 
-#### Using IDSCPv2 as a passive (receiving) client component
+#### Using IDSCP2 as a passive (receiving) client component
 To set up a client to receive messages from the server, it can be set up as the first route hop. All received server messages will be processed further on.
 
 ```xml
@@ -108,9 +108,9 @@ To set up a client to receive messages from the server, it can be set up as the 
 </route>
 ```
 
-### IDSCPv2 Sample Message Flow
+### IDSCP2 Sample Message Flow
 
-The previous section detailed how an IDSCPv2 tunnel can be set up and handled between two connectors. However, the sample data which was exchanged as message body was just "PING" or "PONG" and no IDS Messages were used yet. This section explains the use of IDSCPv2 in combination with IDS Message flows.
+The previous section detailed how an IDSCP2 tunnel can be set up and handled between two connectors. However, the sample data which was exchanged as message body was just "PING" or "PONG" and no IDS Messages were used yet. This section explains the use of IDSCP2 in combination with IDS Message flows.
 
 #### Contract Agreement Message Flow
 
@@ -146,7 +146,7 @@ Please see package "examples" and compare /route-examples/demo-route.xml" and th
 ```
 
 The processor reads out the artifactUri defined in the camel route and creates the following message request body and header as serialised JSON-LD. 
-The message is sent using an IDSCPv2 tunnel from client to server as first step of the contract negotiation. 
+The message is sent using an IDSCP2 tunnel from client to server as first step of the contract negotiation. 
 The message itself is transmitted as HTTP multipart format with two separate objects, namely header and body.  
 The serialization of the header of the message might look like this:
 
@@ -214,7 +214,7 @@ The serialization of the body of the message might look like this:
 
 The creation of the messages and the corresponding Camel message processors can be seen in the Trusted Connector github project in package "camel-idscp2".
 We process the message on the server side with an additional Camel Route similar to this one. 
-It basically consists of an IDSCPv2 server endpoint as explained in the previous sections, but this time additional message type checks are added and the corresponding Camel Processors are called.
+It basically consists of an IDSCP2 server endpoint as explained in the previous sections, but this time additional message type checks are added and the corresponding Camel Processors are called.
 When an unknown message type is received, its body is set to null to drop the message and stop endless looping as can be seen in the <otherwise> branch.
 When an ContractAgreementMessage is received, the message flow is finished, therefore after its processing Camel strips its content as well as can be seen in the ContractAgreementMessage branch.
 Note that there is no <to> branch used in the route due to the fact that this server endpoint automatically replies to the connected client peer once the end of the route is reached. 

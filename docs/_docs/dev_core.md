@@ -72,7 +72,7 @@ docker exec -ti <container_name> /root/bin/client
 
 ## Managing Features
 
-To keep its footprint low, the core platform only contains a few protocol adapters for Apache Camel, such as HTTP(S), WebSockets, and OPC-UA. If you need to install further protocol adapters, you may proceed as follows:
+To keep its footprint low, the core platform only contains a few protocol adapters for Apache Camel, such as HTTP(S). If you need to install further protocol adapters, you may proceed as follows:
 
 Enter the shell as described above.
 

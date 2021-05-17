@@ -131,7 +131,7 @@ The Core Container provides the main functionality of the Trusted Connector and 
 
 * __Usage Control__: Data flows and the usage of messages can be controlled using the [LUCON](../usage_control) policy framework.
 * __Route Manager__: Message routing based on [Apache Camel](http://camel.apache.org/). The basic installation contains protocol adapters for
-    * {:.browser-default} IDSP: A secure web socket protocol between Trusted Connectors, including remote attestation and meta data exchange
+    * {:.browser-default} IDSCP2: A secure TCP/IP-based protocol between Trusted Connectors, including remote attestation functionalities
     * OPC-UA (based on Eclipse Milo)
     * MQTT (based on Eclipse Paho)
     * JMS
