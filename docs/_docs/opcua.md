@@ -5,11 +5,15 @@ permalink: /docs/opcua/
 
 ---
 
-In this tutorial you will read sensor measurements from an OPC-UA sensor and forward them to a REST service:
+## TODO
+
+> Orphaned Page. Possibly Incomplete. Either Link or Delete
+
+In this tutorial you will read sensor measurements from an [OPC Unified Architecture](https://opcfoundation.org/about/opc-technologies/opc-ua/) (OPC-UA) sensor and forward them to a REST service:
 
 ## Start the Connector
 
-Download the [trusted-connector-examples_develop.zip](https://github.com/industrial-data-space/trusted-connector/blob/develop/examples/trusted-connector-examples_develop.zip?raw=true) file. Unzip the file in some folder, `cd` into the contained folder `example-getting-started` and start the connector with docker-compose:
+Download the [trusted-connector-examples_develop.zip](https://github.com/industrial-data-space/trusted-connector/blob/develop/examples/trusted-connector-examples_develop.zip?raw=true) file. Unzip the file into a directory of your choice, `cd` into the contained folder `example-getting-started` and start the connector with docker-compose:
 
 ```bash
 $ wget https://github.com/industrial-data-space/trusted-connector/blob/develop/examples/trusted-connector-examples_develop.zip?raw=true -O examples.zip

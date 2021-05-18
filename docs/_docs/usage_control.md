@@ -9,7 +9,7 @@ In this part you will learn how to control data flows within the Trusted Connect
 
 ## Introduction to LUCON
 
-LUCON (*Logic based Usage CONtrol*) is a policy language for controlling data flows between endpoints. The Trusted Connector uses [Apache Camel](http://camel.apache.org/) to route messages between services (such as MQTT, REST, or OPC-UA endpoints). The ways how messages may be processed and passed around between services is controlled by LUCON, a simple policy language for message labeling and taint tracking.
+LUCON (**L**ogic based **U**sage **Con**trol) is a policy language for controlling data flows between endpoints. The Trusted Connector uses [Apache Camel](http://camel.apache.org/) to route messages between services (such as MQTT, REST, or [OPC-UA](../../docs/_docs/opcua.md) endpoints). The ways how messages may be processed and passed around between services is controlled by LUCON, a simple policy language for message labeling and taint tracking.
 
 The LUCON policy language comes with an Eclipse plugin for syntax highlighting, code completion and compilation into a format that is understood by the policy decision point within the Connector. Thus the typical workflow is as follows:
 
