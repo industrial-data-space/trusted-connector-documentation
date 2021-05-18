@@ -211,7 +211,8 @@ Usage of this data can be limited or invalid data flows can be suppressed. It is
 to limit the way data can be accessed or to enforce specific actions to be carried out.
 
 Data that is marked private can be hindered from leaving a Connector. It is also possible to enforce data undergoing anonymization
-provided by a dedicated service before being accessed from the outside. An example for an obligation is a logging event were every access to a data item leads to an entry in
-the audit log. The policies are transmitted along with the data with the IDS Communication Protocol (IDSCP).
+provided by a dedicated service before being accessed from the outside. An example for an obligation is a logging event were every access to a data item leads to an entry in the audit log. The policies are transmitted along with the data with the IDS Communication Protocol (IDSCP).
+
+For more information, see the the [dedicated section on Usage Control](../../docs/usage_control)
 
 <span style="height:30px;display:block;"></span>
