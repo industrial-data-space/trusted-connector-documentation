@@ -5,6 +5,10 @@ permalink: /docs/shell/
 
 ---
 
+# Deprecated
+
+> Spring Boot uses a different system. This will need to be updated.
+
 The shell can be used to manage features and settings in the application server.
 
 # Entering the shell

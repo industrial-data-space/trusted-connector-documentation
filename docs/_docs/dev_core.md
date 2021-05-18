@@ -5,9 +5,9 @@ permalink: /docs/dev_core/
 
 ---
 
-The core platform is the connector's application layer part for managing containers, message routes, and usage control policies. It is based on the Apache Karaf framework and can be started as a standalone application, within a docker container or as a trust\|me _a0_ container.
+The core platform is the connector's application layer part for managing containers, message routes, and usage control policies. It is based on the [!!!TODO!!!] Apache Karaf framework and can be started as a standalone application, within a docker container or as a trust\|me _a0_ container.
 
-## Prerequisites
+## Prerequisites [!!!TODO!!!]
 
 The following tools are required to build the karaf runtime and additional build artifacts and/or the docker images:
 
@@ -45,13 +45,15 @@ You can specify custom build targets/flags for gradle, defaults are "build check
 
 After a successful build, the core platform can be launched with the following command:
 
+
+[!!!TODO!!!]
 ```
 karaf-assembly/build/assembly/bin/karaf clean debug
 ```
 
 Confirm that the management console is available at `http://localhost:8181/`.
 
-### Docker Build
+### Docker Build [!!!TODO!!!]
 
 If building of docker images from the artifacts built in the previous step is desired, you can either
 
@@ -62,7 +64,7 @@ If building of docker images from the artifacts built in the previous step is de
 
 During development, you may want to interact with the shell of the application server. In a production environment, access to the shell must be limited for administrators or the shell must be removed completely. In this development setup, however, the shell can directly be accessed:
 
-When running the core platform locally with `karaf-assembly/build/assembly/bin/karaf clean debug`, you are immediately dropped into the shell. 
+[!!!TODO!!!] When running the core platform locally with `karaf-assembly/build/assembly/bin/karaf clean debug`, you are immediately dropped into the shell. 
 
 If the core platform runs in a Docker container, use the following command to enter the shell.
 
