@@ -127,7 +127,7 @@ For a more detailed description of the architecture see our publication _Manuel 
 
 __Core Container__
 
-The Core Container provides the main functionality of the Trusted Connector and is the sole intermediate between application containers and the Internet. It runs on top of the container management layer and hosts different services for managing applications, setting up data routes and connecting to other Trusted Connectors. Based on Apache Karaf, it provides a management shell and REST API. The main services are
+The Core Container provides the main functionality of the Trusted Connector and is the sole intermediate between application containers and the Internet. It runs on top of the container management layer and hosts different services for managing applications, setting up data routes and connecting to other Trusted Connectors. Based on Spring Boot, it provides a REST API. The main services are
 
 * __Usage Control__: Data flows and the usage of messages can be controlled using the [LUCON](../usage_control) policy framework.
 * __Route Manager__: Message routing based on [Apache Camel](http://camel.apache.org/). The basic installation contains protocol adapters for
