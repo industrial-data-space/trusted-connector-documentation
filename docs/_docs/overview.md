@@ -74,10 +74,10 @@ The isolation between Apps is based on the isolation between containers. The Cor
     <img width="500" src="../../assets/img/trustme_arch.png"/>
 </div>
 
-Isolation works based on kernel features: Each container runs in a separate namespace. Thus, namespaces virtualize the kernel resources. This makes containers unaware of components in a different namespace. Cgroups allow for flexible allocation and enforcement of process group policies. This way, process groups can be formed to create a container. This also allows to define policies regarding CPU and memory limitations as well as other hardware resources, as external interfaces.
+Isolation works based on kernel features: Each container runs in a separate namespace. Thus, namespaces virtualize the kernel resources. This makes containers unaware of components in a different namespace. Cgroups allow for flexible allocation and enforcement of process group policies. This way, process groups can be formed to create a container. This also allows one to define policies regarding CPU and memory limitations as well as other hardware resources, as external interfaces.
 The Linux Security Module (LSM) enforces protection policies by introducing hooks at critical points of execution.
 Capabilities are used to assign processes with a fine-grained set of permissions to regulate access to kernel objects.
-Finally, Full Disk Encryption (FDE) is used to encrypt all persisted container storage. This approach is compatible to Linux Containers (LXC).
+Finally, Full Disk Encryption (FDE) is used to encrypt all persisted container storage. This approach is compatible with Linux Containers (LXC).
 
 <span style="height:30px;display:block;"></span>
 <a name="trustedplatform"></a>
