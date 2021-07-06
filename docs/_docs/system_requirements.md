@@ -29,9 +29,9 @@ table td {
 
 |           |  Platform | Description |
 | --------- |------------------- | ---- |
-| ![image-title-here](../../assets/img/tux_logo.png){: width="50px"} | Linux x86-64 | Tested with docker and trustme for x86|
-| ![image-title-here](../../assets/img/android_logo.png){: width="50px"} | Android | Tested with trustme for ARM |
-| ![image-title-here](../../assets/img/pi_logo.png){: width="50px"} | Raspberry Pi | Tested with docker image for Raspbian Strech (ARM)|
+| ![Linux x86-64 Tux Logo](../../assets/img/tux_logo.png){: width="50px"} | Linux x86-64 | Tested with docker and trustme for x86|
+| ![Android Bugdroid Logo](../../assets/img/android_logo.png){: width="50px"} | Android | Tested with trustme for ARM |
+| ![Raspberry Pi Logo](../../assets/img/pi_logo.png){: width="50px"} | Raspberry Pi | Tested with docker image for Raspbian Strech (ARM)|
 |  | 16/8-Core PowerPC | Tested with trustme, no Docker support |
 
 

@@ -43,7 +43,7 @@ $ cd example-getting-started
 $ docker-compose up
 ```
 
-Congratulations, you just started your first connector! The webconsole of the connector is available at `http://localhost:8181/`.
+Congratulations, you just started your first connector! The webconsole of the connector is available at `http://localhost/8080/`.
 
 The login is `ids`:`ids`.
 
