@@ -74,10 +74,10 @@ The isolation between Apps is based on the isolation between containers. The Cor
     <img width="500" src="../../assets/img/trustme_arch.png"/>
 </div>
 
-Isolation works based on kernel features: Each container runs in a separate namespace. Thus, namespaces virtualize the kernel resources. This makes containers unaware of components in a different namespace. Cgroups allow for flexible allocation and enforcement of process group policies. This way, process groups can be formed to create a container. This also allows to define policies regarding CPU and memory limitations as well as other hardware resources, as external interfaces.
+Isolation works based on kernel features: Each container runs in a separate namespace. Thus, namespaces virtualize the kernel resources. This makes containers unaware of components in a different namespace. Cgroups allow for flexible allocation and enforcement of process group policies. This way, process groups can be formed to create a container. This also allows one to define policies regarding CPU and memory limitations as well as other hardware resources, as external interfaces.
 The Linux Security Module (LSM) enforces protection policies by introducing hooks at critical points of execution.
 Capabilities are used to assign processes with a fine-grained set of permissions to regulate access to kernel objects.
-Finally, Full Disk Encryption (FDE) is used to encrypt all persisted container storage. This approach is compatible to Linux Containers (LXC).
+Finally, Full Disk Encryption (FDE) is used to encrypt all persisted container storage. This approach is compatible with Linux Containers (LXC).
 
 <span style="height:30px;display:block;"></span>
 <a name="trustedplatform"></a>
@@ -127,7 +127,7 @@ For a more detailed description of the architecture see our publication _Manuel 
 
 __Core Container__
 
-The Core Container provides the main functionality of the Trusted Connector and is the sole intermediate between application containers and the Internet. It runs on top of the container management layer and hosts different services for managing applications, setting up data routes and connecting to other Trusted Connectors. Based on Apache Karaf, it provides a management shell and REST API. The main services are
+The Core Container provides the main functionality of the Trusted Connector and is the sole intermediate between application containers and the Internet. It runs on top of the container management layer and hosts different services for managing applications, setting up data routes and connecting to other Trusted Connectors. Based on Spring Boot, it provides a REST API. The main services are
 
 * __Usage Control__: Data flows and the usage of messages can be controlled using the [LUCON](../usage_control) policy framework.
 * __Route Manager__: Message routing based on [Apache Camel](http://camel.apache.org/). The basic installation contains protocol adapters for
@@ -211,7 +211,8 @@ Usage of this data can be limited or invalid data flows can be suppressed. It is
 to limit the way data can be accessed or to enforce specific actions to be carried out.
 
 Data that is marked private can be hindered from leaving a Connector. It is also possible to enforce data undergoing anonymization
-provided by a dedicated service before being accessed from the outside. An example for an obligation is a logging event were every access to a data item leads to an entry in
-the audit log. The policies are transmitted along with the data with the IDS Communication Protocol (IDSCP).
+provided by a dedicated service before being accessed from the outside. An example for an obligation is a logging event were every access to a data item leads to an entry in the audit log. The policies are transmitted along with the data with the IDS Communication Protocol (IDSCP).
+
+For more information, see the the [dedicated section on Usage Control](../../docs/usage_control)
 
 <span style="height:30px;display:block;"></span>

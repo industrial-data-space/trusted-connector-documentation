@@ -7,11 +7,11 @@ permalink: /docs/dev_faq/
 
 The following questions (FAQ) are frequently asked by people setting up the Trusted Connector.
 
+- [I heard about an IDSCP protocol based on WebSockets, where to find it?](#i-heard-about-an-idscp-protocol-based-on-websockets-where-to-find-it)
 - [I found a bug](#i-found-a-bug)
 - [Do I have to build the Trusted Connector to try out the examples?](#do-i-have-to-build-the-trusted-connector-to-try-out-the-examples)
 - [I have connectivity issues](#i-have-connectivity-issues)
-- [When switching my system Java version, the gradlew build command still uses its own Java-Version](#when-switching-my-system-java-version-the-gradlew-build-command-still-uses-its-own-java-version)
-- [I can't build the system using the latest node version 12 (2019 05)](#i-cant-build-the-system-using-the-latest-node-version-12-2019-05)
+- [When switching my system's Java version, gradlew still uses another Java version](#when-switching-my-systems-java-version-gradlew-still-uses-another-java-version)
 - [What Java Version is currently supported?](#what-java-version-is-currently-supported)
 
 
@@ -39,7 +39,7 @@ If you want to run the Core Platform on the underlying trustme OS, you will need
 
 When experiencing connectivity issues during docker build, gradle build, or even at runtime, 95% of the time there is some proxy or DNS filter installed in your corporation. Fixing that is possible, but tricky. Please look around on StackOverflow and similar sources for directions, or ask your IT department to provide your testing system direct access to the web. Docker container, for instance, will always try to resolve using Google DNS (8.8.8.8 and 8.8.4.4) by default, so make sure this DNS is reachable from your network.
 
-## When switching my system java version, gradlew still uses another Java version
+## When switching my system's Java version, gradlew still uses another Java version
 
 The gradlew script has some discovery algorithms to identify the Java version it uses. The Java version used by gradlew can be configured in one of the following ways:
 
