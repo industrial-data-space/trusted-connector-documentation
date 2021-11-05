@@ -37,7 +37,7 @@ $ docker-compose --version
 Download the [examples zip file](https://github.com/industrial-data-space/trusted-connector/blob/master/examples/trusted-connector-examples_5.0.2.zip?raw=true) file. Unzip the file in some folder, `cd` into the contained folder `example-getting-started` and start the connector with docker-compose:
 
 ```bash
-$ wget https://github.com/industrial-data-space/trusted-connector/blob/develop/examples/trusted-connector-examples_develop.zip?raw=true -O examples.zip
+$ wget "https://industrial-data-space.github.io/trusted-connector-documentation/docs/getting_started/?raw=true" -O examples.zip
 $ unzip examples.zip
 $ cd example-getting-started
 $ docker-compose up
