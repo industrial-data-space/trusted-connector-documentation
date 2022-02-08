@@ -47,6 +47,16 @@ Congratulations, you just started your first connector! The webconsole of the co
 
 The login is `ids`:`ids`.
 
+> Note: The log files of the connector could accumulate to a size that may causes problems. To prevent this you can enable log rotation in the docker-compose file:
+```
+services:
+    service_name:        
+        logging:
+            driver: "json-file"
+            options:
+                max-size: "50m"
+```
+
 ## Run without Docker
 For testing purposes you may also run the connector without docker as described [here](../../docs/dev_core).
 > Note: This is not secure. Productive connectors must run in a container.
