@@ -122,7 +122,7 @@ The Trusted Connector features the secure container management layer _trust\|me_
 
 For mandatory access control, trust\|me adds a custom Linux Security Module (LSM) to the Linux kernel, which can be combined with SELinux using LSM stacking. In addition, the trust\|me architecture includes a secure element for tamper-proof key storage and a TPM 2.0 interface for (remote) attestation of the platform integrity using the IDSCP protocol.
 
-For a more detailed description of the architecture see our publication _Manuel Huber, Julian Horsch, Michael Velten, Michael Weiss, Sascha Wessel. [A Secure Architecture for Operating System-Level Virtualization on Mobile Devices](http://link.springer.com/chapter/10.1007/978-3-319-38898-4_2). In Information Security and Cryptology 2016, pp. 430-450_
+For a more detailed description of the architecture see our publication _Manuel Huber, Julian Horsch, Michael Velten, Michael Weiss, Sascha Wessel. [A Secure Architecture for Operating System-Level Virtualization on Mobile Devices](http://link.springer.com/chapter/10.1007/978-3-319-38898-4_25). In Information Security and Cryptology 2016, pp. 430-450_
 
 
 __Core Container__

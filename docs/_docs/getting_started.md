@@ -34,18 +34,22 @@ $ docker-compose --version
 
 ## Run a Local Connector
 
-Download the [examples zip file](https://github.com/industrial-data-space/trusted-connector/blob/master/examples/trusted-connector-examples_5.0.2.zip?raw=true) file. Unzip the file in some folder, `cd` into the contained folder `example-getting-started` and start the connector with docker-compose:
+Download the [examples zip file](https://github.com/Fraunhofer-AISEC/trusted-connector/blob/master/examples/trusted-connector-examples_5.0.2.zip/?raw=true\) file. Unzip the file in some folder, `cd` into the contained folder `example-getting-started` and start the connector with docker-compose:
 
 ```bash
-$ wget \"https://industrial-data-space.github.io/trusted-connector-documentation/docs/getting_started/?raw=true\" -O examples.zip
+$ wget \"https://github.com/Fraunhofer-AISEC/trusted-connector/blob/master/examples/trusted-connector-examples_5.0.2.zip/?raw=true\" -O examples.zip
 $ unzip examples.zip
 $ cd example-getting-started
 $ docker-compose up
 ```
 
-Congratulations, you just started your first connector! The webconsole of the connector is available at `http://localhost/8080/`.
+Congratulations, you just started your first connector! The webconsole of the connector is available at `http://localhost:8080/`.
 
 The login is `ids`:`ids`.
+
+## Run without Docker
+For testing purposes you may also run the connector without docker as described [here](../../docs/dev_core).
+> Note: This is not secure. Productive connectors must run in a container.
 
 ## What did just happen?
 

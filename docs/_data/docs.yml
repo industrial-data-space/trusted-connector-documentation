@@ -5,6 +5,7 @@
 - title: User documentation
   docs:
   - getting_started
+  - using_connector
   - usage_control
 
 - title: Developer documentation

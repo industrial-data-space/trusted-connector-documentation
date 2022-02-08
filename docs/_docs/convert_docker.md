@@ -16,6 +16,6 @@ $ ./converter pull "registry-1.docker.io" "library/debian"
 It is also possible to convert images from private docker registries:
 
 ```
-$ ./converter login -u "<USER>" -p "<PASSWD>" "app-store.isst.fraunhofer.de:5000"
-$ ./converter pull "app-store.isst.fraunhofer.de:5000" "ids/core-platform"
+$ ./converter login -u "<USER>" -p "<PASSWD>" "mvn.ids.isst.fraunhofer.de:5000"
+$ ./converter pull "mvn.ids.isst.fraunhofer.de:5000" "ids/core-platform"
 ```
