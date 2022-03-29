@@ -25,7 +25,7 @@ Due to its modular architecture, a WebSocket-based transport protocol for IDSCP2
 
 ## I found a bug
 
-If you run into any bugs, please [file a bug report on GitHub](https://github.com/industrial-data-space/trusted-connector/issues). We will check the issue and reply as soon as possible.
+If you run into any bugs, please [file a bug report on GitHub](https://github.com/Fraunhofer-AISEC/trusted-connector/issues). We will check the issue and reply as soon as possible.
 
 ## Do I have to build the Trusted Connector to try out the examples?
 

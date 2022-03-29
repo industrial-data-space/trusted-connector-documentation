@@ -19,7 +19,6 @@ In order to run the core platform outside the docker image as described below, a
 If you want to build the core platform without the `build-container` (used by `build.sh`, **not** recommended) need the following tools are required as well:
 
 * Java Development Kit (JDK) 11
-* Maven (>= 3.5.3 recommended)
 * nodejs (>= 12 recommended)
 * protobuf-compiler (or other package that provides `protoc`)
 
@@ -28,7 +27,7 @@ If you want to build the core platform without the `build-container` (used by `b
 Clone the project from Github.
 
 ```
-git clone https://github.com/industrial-data-space/trusted-connector.git
+git clone https://github.com/Fraunhofer-AISEC/trusted-connector.git
 ```
 
 ## Build

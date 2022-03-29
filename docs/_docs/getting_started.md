@@ -34,18 +34,32 @@ $ docker-compose --version
 
 ## Run a Local Connector
 
-Download the [examples zip file](https://github.com/industrial-data-space/trusted-connector/blob/master/examples/trusted-connector-examples_5.0.2.zip?raw=true) file. Unzip the file in some folder, `cd` into the contained folder `example-getting-started` and start the connector with docker-compose:
+Download the [examples zip file](https://github.com/Fraunhofer-AISEC/trusted-connector/blob/master/examples/trusted-connector-examples_5.0.2.zip/?raw=true\) file. Unzip the file in some folder, `cd` into the contained folder `example-getting-started` and start the connector with docker-compose:
 
 ```bash
-$ wget \"https://industrial-data-space.github.io/trusted-connector-documentation/docs/getting_started/?raw=true\" -O examples.zip
+$ wget \"https://github.com/Fraunhofer-AISEC/trusted-connector/blob/master/examples/trusted-connector-examples_latest.zip/?raw=true\" -O examples.zip
 $ unzip examples.zip
 $ cd example-getting-started
 $ docker-compose up
 ```
 
-Congratulations, you just started your first connector! The webconsole of the connector is available at `http://localhost/8080/`.
+Congratulations, you just started your first connector! The webconsole of the connector is available at `http://localhost:8080/`.
 
 The login is `ids`:`ids`.
+
+> Note: The log files of the connector could accumulate to a size that may causes problems. To prevent this you can enable log rotation in the docker-compose file:
+```
+services:
+    service_name:        
+        logging:
+            driver: "json-file"
+            options:
+                max-size: "50m"
+```
+
+## Run without Docker
+For testing purposes you may also run the connector without docker as described [here](../../docs/dev_core).
+> Note: This is not secure. Productive connectors must run in a container.
 
 ## What did just happen?
 
