@@ -1,7 +1,7 @@
 ---
 layout: doc
-title: Embedding the IDS protocol
-permalink: /docs/idscp-overview/
+title: IDSCP2 Overview
+permalink: /docs/idscp_overview/
 
 ---
 

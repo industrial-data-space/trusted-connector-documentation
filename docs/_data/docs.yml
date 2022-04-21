@@ -6,9 +6,8 @@
   docs:
   - getting_started
   - using_connector
+  - idscp_overview
   - usage_control
-  - idscp-overview
-
 - title: Developer documentation
   docs:
   - swagger
