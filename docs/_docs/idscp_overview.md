@@ -5,7 +5,6 @@ permalink: /docs/idscp_overview/
 
 ---
 
-### Overview
 
 Parties in the IDS can use the _IDS Communication Protocol (IDSCP)_ to exchange data over a secure channel. IDSCP underwent
 some major redesign and is now available as IDSCP2.
