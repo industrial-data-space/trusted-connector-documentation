@@ -34,7 +34,7 @@ $ docker-compose --version
 
 ## Run a Local Connector
 
-Download the [examples zip file](https://github.com/Fraunhofer-AISEC/trusted-connector/blob/master/examples/trusted-connector-examples_5.0.2.zip/?raw=true\) file. Unzip the file in some folder, `cd` into the contained folder `example-getting-started` and start the connector with docker-compose:
+Download the [examples zip file](https://github.com/Fraunhofer-AISEC/trusted-connector/blob/master/examples/trusted-connector-examples_latest.zip/?raw=true\) file. Unzip the file in some folder, `cd` into the contained folder `example-getting-started` and start the connector with docker-compose:
 
 ```bash
 $ wget \"https://github.com/Fraunhofer-AISEC/trusted-connector/blob/master/examples/trusted-connector-examples_latest.zip/?raw=true\" -O examples.zip
